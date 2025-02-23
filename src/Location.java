@@ -1,7 +1,6 @@
 import java.util.Arrays;
 
 public class Location {
-
     private String name;
     private int ID;
     private int[] locations;
@@ -27,4 +26,29 @@ public class Location {
                 ", locations=" + Arrays.toString(locations) +
                 '}';
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public int[] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(int[] locations) {
+        this.locations = locations;
+    }
+
 }
