@@ -1,4 +1,5 @@
-public class Pohyb extends Command{
+package prikazy;
+public class Batoh extends Command {
     @Override
     public String execute() {
         return "";

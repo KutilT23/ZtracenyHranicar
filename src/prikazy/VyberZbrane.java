@@ -1,4 +1,5 @@
-public class VyberZbrane extends Command{
+package prikazy;
+public class VyberZbrane extends Command {
     @Override
     public String execute() {
         return "";

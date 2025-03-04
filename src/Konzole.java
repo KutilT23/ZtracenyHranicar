@@ -1,3 +1,5 @@
+import prikazy.*;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.util.HashMap;
@@ -18,8 +20,6 @@ public class Konzole {
         mapa.put("souboj",new Souboj());
         mapa.put("ukol",new Ukol());
         mapa.put("vyberZbrane",new VyberZbrane());
-
-
     }
 
     private Scanner scanner = new Scanner(System.in);
@@ -40,7 +40,7 @@ public class Konzole {
     public void start(){
         inicializace();
         try{
-            resetSouboruProPrikazy();
+            resetSouboru();
             do{
                 proved();
             }while(!exit);
@@ -58,7 +58,7 @@ public class Konzole {
         }
     }
 
-    private void resetSouboruProPrikazy(){
+    private void resetSouboru(){
         try(BufferedWriter bw = new BufferedWriter(new FileWriter(souborPrikazu,false))){
         }catch(Exception e){
         }

@@ -9,7 +9,7 @@ public class WorldMap {
     private int start = 0;
     private int currentPosition = start;
 
-    public boolean loadMap() {
+    public boolean nacistMapu() {
         try (BufferedReader br = new BufferedReader(new FileReader("mapa.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {

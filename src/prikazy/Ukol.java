@@ -1,4 +1,5 @@
-public class Prikazy extends Command{
+package prikazy;
+public class Ukol extends Command {
     @Override
     public String execute() {
         return "";

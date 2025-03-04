@@ -1,4 +1,5 @@
-public class Interakce extends Command{
+package prikazy;
+public class Interakce extends Command {
     @Override
     public String execute() {
         return "";

@@ -1,4 +1,5 @@
-public class Konec extends Command{
+package prikazy;
+public class Konec extends Command {
     @Override
     public String execute() {
         return "";

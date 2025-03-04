@@ -1,4 +1,5 @@
-public class Batoh extends Command{
+package prikazy;
+public class Prikazy extends Command {
     @Override
     public String execute() {
         return "";

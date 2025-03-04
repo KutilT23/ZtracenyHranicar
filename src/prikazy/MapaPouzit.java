@@ -1,4 +1,5 @@
-public class PouzitPredmet extends Command{
+package prikazy;
+public class MapaPouzit extends Command {
     @Override
     public String execute() {
         return "";
