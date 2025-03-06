@@ -1,9 +1,12 @@
+import world.WorldMap;
+
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        WorldMap m = new WorldMap();
-        m.nacistMapu();
-        System.out.println(m.getWorld());
-        System.out.println(m.getCurrentPosition());
+        Konzole k = new Konzole();
+        k.start();
+
 
 
     }

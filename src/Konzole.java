@@ -14,17 +14,15 @@ public class Konzole {
         mapa.put("interakce",new Interakce());
         mapa.put("konec",new Konec());
         mapa.put("prikazy",new Prikazy());
-        mapa.put("mapaPouzit",new MapaPouzit());
         mapa.put("pohyb",new Pohyb());
         mapa.put("pouzitPredmet",new PouzitPredmet());
         mapa.put("souboj",new Souboj());
         mapa.put("ukol",new Ukol());
-        mapa.put("vyberZbrane",new VyberZbrane());
     }
 
     private Scanner scanner = new Scanner(System.in);
     private void proved(){
-        System.out.print(">>");
+        System.out.println("Napište co chcete dělat");
         String prikaz = scanner.nextLine();
         prikaz = prikaz.trim();
         prikaz = prikaz.toLowerCase();
