@@ -1,7 +1,8 @@
-public class Hrac {
-    private int zivoty;
-    private int sila;
+package dalsi;
 
+public class Hrac {
+    private int zivoty = 100;
+    private int sila = 3;
 
 
 

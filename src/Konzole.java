@@ -15,7 +15,7 @@ public class Konzole {
         mapa.put("konec",new Konec());
         mapa.put("prikazy",new Prikazy());
         mapa.put("pohyb",new Pohyb());
-        mapa.put("pouzitPredmet",new PouzitPredmet());
+        mapa.put("pouzit",new PouzitPredmet());
         mapa.put("souboj",new Souboj());
         mapa.put("ukol",new Ukol());
     }
