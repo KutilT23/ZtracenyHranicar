@@ -1,9 +1,6 @@
 package dalsi;
 
 public class Vesnican {
-    private String text;
-    public String mluvi(){
-
-        return "";
-    }
+    String jmeno;
+    String konverzace;
 }

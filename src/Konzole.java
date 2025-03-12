@@ -15,9 +15,8 @@ public class Konzole {
         mapa.put("konec",new Konec());
         mapa.put("prikazy",new Prikazy());
         mapa.put("pohyb",new Pohyb());
-        mapa.put("pouzit",new PouzitPredmet());
         mapa.put("souboj",new Souboj());
-        mapa.put("ukol",new Ukol());
+
     }
 
     private Scanner scanner = new Scanner(System.in);
@@ -37,6 +36,7 @@ public class Konzole {
 
     public void start(){
         inicializace();
+        Batoh batoh = new Batoh();
         try{
             resetSouboru();
             do{

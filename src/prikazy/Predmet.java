@@ -7,6 +7,7 @@ public class Predmet {
     private TypPredmetu typPredmetu;
     private int heal;
 
+
     public Predmet() {
     }
 
@@ -22,6 +23,12 @@ public class Predmet {
         this.objem = objem;
         this.typPredmetu = typPredmetu;
         this.heal = heal;
+
+    }
+
+    public Predmet(String nazev, int objem) {
+        this.nazev = nazev;
+        this.objem = objem;
     }
 
     public String toString1() {
@@ -82,4 +89,5 @@ public class Predmet {
     public void setHeal(int heal) {
         this.heal = heal;
     }
+
 }

@@ -5,7 +5,8 @@ package prikazy;
 public class Prikazy extends Command {
     @Override
     public String execute() {
-      return "batoh, interakce, konec, pohyb, prikazy, pouzitPredmet, souboj, ukol";
+      return "batoh, interakce, konec, pohyb, prikazy, pouzit, souboj, ukol";
+
     }
 
     @Override

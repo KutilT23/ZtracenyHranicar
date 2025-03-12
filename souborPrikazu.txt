@@ -1,2 +1,2 @@
-batoh
-pouzit
+souboj
+souboj

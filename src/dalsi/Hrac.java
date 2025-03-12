@@ -1,8 +1,8 @@
 package dalsi;
 
 public class Hrac {
-    private int zivoty = 100;
-    private int sila = 3;
+    private int zivoty = 95;
+    private int sila = 10;
 
 
 
@@ -12,5 +12,13 @@ public class Hrac {
 
     public int getSila() {
         return sila;
+    }
+
+    public void setSila(int sila) {
+        this.sila = sila;
+    }
+
+    public void setZivoty(int zivoty) {
+        this.zivoty = zivoty;
     }
 }
