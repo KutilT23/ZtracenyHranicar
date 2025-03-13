@@ -16,9 +16,7 @@ public class Batoh extends Command {
         return batoh;
     }
     private String vypis = "";
-    public void pridani(Predmet p) {
-        batoh.add(p);
-    }
+
     public void pouziti(){
 
         System.out.println();
@@ -30,6 +28,7 @@ public class Batoh extends Command {
             if(odpoved.equals(getBatoh().get(i).getNazev())){
                 ruka.clear();
                 ruka.add(getBatoh().get(i));
+                Hrac.setSila(Hrac.getSila()+ruka.get(0).getSila());
 
                 if(ruka.get(0).getTypPredmetu().equals(TypPredmetu.LEKTVARHEAL)&&Hrac.getZivoty()<100){
 
@@ -42,10 +41,13 @@ public class Batoh extends Command {
                     }
 
                     System.out.println(Hrac.getZivoty());
-                    i--;
+
+                    System.out.println("Batoh:" + getBatoh());
+                    break;
                 }
 
-                System.out.println(getRuka());
+                System.out.println("Batoh" + getBatoh());
+                System.out.println("Předmět pouzivany: " + getRuka());
 
             }
 

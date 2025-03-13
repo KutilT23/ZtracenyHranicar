@@ -29,16 +29,13 @@ public class Souboj extends Command {
                 monstrum.pridaniLoot();
                 System.out.println("Jsi v souboji s  " + monstrum);
                 while (Hrac.getZivoty()>0&&monstrum.getZivoty()>0){
-                    System.out.println(monstrum.getJmeno() +", " +monstrum.getZivoty());
-                    System.out.println(Hrac.getZivoty());
+                    System.out.println(monstrum.getJmeno() +", Hp: " +monstrum.getZivoty() +", Síla: " + monstrum.getSila());
+                    System.out.println("Hráč, Hp: " +Hrac.getZivoty() +", Síla: " + Hrac.getSila());
                     monstrum.setZivoty(monstrum.getZivoty()- Hrac.getSila());
                     if(monstrum.getZivoty()<=0){
                         System.out.println("Vyhral si");
-                        int cislo = rd.nextInt(4);
-                        b.getBatoh().add(monstrum.getMonstra1().get(cislo));
-                        vyhra.add(monstrum.getMonstra1().get(cislo));
-                        System.out.println(getVyhra());
-
+                        b.getBatoh().add(monstrum.getMonstra1().get(rd.nextInt(4)));
+                        System.out.println(b.getBatoh());
                     }
                     Hrac.setZivoty(Hrac.getZivoty()-monstrum.getSila());
                     if(Hrac.getZivoty()<=0){
@@ -52,17 +49,14 @@ public class Souboj extends Command {
                 monstrum2.pridaniLoot2();
                 System.out.println("Jsi v souboji s  " + monstrum2);
                 while (Hrac.getZivoty()>0&&monstrum2.getZivoty()>0){
-                    System.out.println(monstrum2.getJmeno() +", " +monstrum2.getZivoty());
-                    System.out.println(Hrac.getZivoty());
+                    System.out.println(monstrum2.getJmeno() +", Hp: " +monstrum2.getZivoty() +", Síla: " + monstrum2.getSila());
+                    System.out.println("Hráč, Hp: " +Hrac.getZivoty() +", Síla: " + Hrac.getSila());
                     monstrum2.setZivoty(monstrum2.getZivoty()- Hrac.getSila());
                     if(monstrum2.getZivoty()<=0){
                         System.out.println("Vyhral si");
 
-                        int cislo2 = rd.nextInt(4);
-
-                        b.getBatoh().add(monstrum2.getMonstra2().get(cislo2));
-                        vyhra.add(monstrum2.getMonstra2().get(cislo2));
-                        System.out.println(getVyhra());
+                        b.getBatoh().add(monstrum2.getMonstra2().get(rd.nextInt(4)));
+                        System.out.println(b.getBatoh());
 
                     }
                     Hrac.setZivoty(Hrac.getZivoty()-monstrum2.getSila());
@@ -77,15 +71,14 @@ public class Souboj extends Command {
                 monstrum3.pridaniLoot3();
                 System.out.println("Jsi v souboji s  " + monstrum3);
                 while (Hrac.getZivoty()>0&&monstrum3.getZivoty()>0){
-                    System.out.println(monstrum3.getJmeno() +", " +monstrum3.getZivoty());
-                    System.out.println(Hrac.getZivoty());
+                    System.out.println(monstrum3.getJmeno() +", Hp: " +monstrum3.getZivoty() +", Síla: " + monstrum3.getSila());
+                    System.out.println("Hráč, Hp: " +Hrac.getZivoty() +", Síla: " + Hrac.getSila());
                     monstrum3.setZivoty(monstrum3.getZivoty()- Hrac.getSila());
                     if(monstrum3.getZivoty()<=0){
                         System.out.println("Vyhral si");
-                        int cislo3 = rd.nextInt(4);
-                        b.getBatoh().add(monstrum3.getMonstra3().get(cislo3));
-                        vyhra.add(monstrum3.getMonstra3().get(cislo3));
-                        System.out.println(getVyhra());
+                        b.getBatoh().add(monstrum3.getMonstra3().get(rd.nextInt(4)));
+                        System.out.println(b.getBatoh());
+
 
                     }
                     Hrac.setZivoty(Hrac.getZivoty()-monstrum3.getSila());

@@ -17,6 +17,7 @@ public class Pohyb extends Command {
         System.out.println("Zvolte směr, kterým chcete jít");
         String direction = "";
         direction = sc.next();
+        direction = direction.toLowerCase();
         System.out.println(map.move(direction));
         return "";
     }

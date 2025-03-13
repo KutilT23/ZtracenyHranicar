@@ -108,7 +108,7 @@ public class Shop {
         String prodani = sc.next();
         prodani = prodani.toLowerCase();
         for (int i = 0; i < b.getBatoh().size(); i++) {
-            if(prodani.equals(b.getBatoh().get(i).getNazev())){
+            if(prodani.equals(b.getBatoh().get(i).getNazev())||Integer.parseInt(prodani) == i){
                 Hrac.setPenize(Hrac.getPenize()+b.getBatoh().get(i).getHodnota());
                 b.getBatoh().remove(i);
                 System.out.println("Úspěšně prodáno :)");
