@@ -25,27 +25,25 @@ public class Monstrum {
 
     public void pridaniLoot(){
         //trhlina
-        monstra1.add(new Predmet("PavouciNoha",3));
+        monstra1.add(new Predmet("PavouciNoha",1));
         monstra1.add(new Predmet("PavouciSrdce",2));
         monstra1.add(new Predmet("PavouciOko",1));
-        monstra1.add(new Predmet("PavouciJed",1));
+        monstra1.add(new Predmet("PavouciJed",2));
 
     }
     public void pridaniLoot2(){
         //les
         monstra2.add(new Predmet("VlkodlaciDrap",1));
         monstra2.add(new Predmet("VlkodlaciTesak",1));
-        monstra2.add(new Predmet("VlkodlaciKrev",1));
+        monstra2.add(new Predmet("VlkodlaciKrev",2));
         monstra2.add(new Predmet("VlkodlaciHlava",3));//možna trofey room??? :DDD
     }
     public void pridaniLoot3(){
         //jezero
         monstra3.add(new Predmet("SireniSupiny",1));
-        monstra3.add(new Predmet("SireniSlzy",1));
-        monstra3.add(new Predmet("SireniMelodie",1));
+        monstra3.add(new Predmet("SireniSlzy",2));
+        monstra3.add(new Predmet("SireniMelodie",3));
         monstra3.add(new Predmet("SireniSrdce",2));
-
-
 
     }
 

@@ -7,8 +7,8 @@ import java.util.Scanner;
 
 public class Batoh extends Command {
 
-    public ArrayList<Predmet>batoh = new ArrayList<>();
-    private ArrayList<Predmet> ruka = new ArrayList();
+    private static ArrayList<Predmet>batoh = new ArrayList<>();
+    private static ArrayList<Predmet> ruka = new ArrayList();
 
 
 
@@ -63,7 +63,6 @@ public class Batoh extends Command {
                     System.out.println(getBatoh());
                     break;
                 case 2:
-                    Hrac hrac = new Hrac();
                     pouziti();
                     break;
                     default:
@@ -71,7 +70,7 @@ public class Batoh extends Command {
                         break;
             }
 
-        for (int i = 0; i < batoh.size(); i++) {
+       /* for (int i = 0; i < batoh.size(); i++) {
             if(batoh.get(i).getHeal()==0){
                 vypis += batoh.get(i).toString1();
             }else{
@@ -79,6 +78,8 @@ public class Batoh extends Command {
             }
 
         }
+
+        */
 
 
 

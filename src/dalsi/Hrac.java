@@ -1,24 +1,31 @@
 package dalsi;
 
 public class Hrac {
-    private int zivoty = 95;
-    private int sila = 10;
+    private static int zivoty = 95;
+    private static int sila = 10;
+    private static int penize = 5;
 
+    public static int getPenize() {
+        return penize;
+    }
 
+    public static void setPenize(int penize) {
+        Hrac.penize = penize;
+    }
 
-    public int getZivoty() {
+    public static int getZivoty() {
         return zivoty;
     }
 
-    public int getSila() {
+    public static void setZivoty(int zivoty) {
+        Hrac.zivoty = zivoty;
+    }
+
+    public static int getSila() {
         return sila;
     }
 
-    public void setSila(int sila) {
-        this.sila = sila;
-    }
-
-    public void setZivoty(int zivoty) {
-        this.zivoty = zivoty;
+    public static void setSila(int sila) {
+        Hrac.sila = sila;
     }
 }

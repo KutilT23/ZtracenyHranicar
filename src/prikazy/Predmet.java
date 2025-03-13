@@ -3,49 +3,55 @@ package prikazy;
 public class Predmet {
     private String nazev;
     private int sila;
-    private int objem;
     private TypPredmetu typPredmetu;
     private int heal;
+    private int cena;
+    private int hodnota;
 
 
     public Predmet() {
     }
 
-    public Predmet(String nazev, int sila, int objem, TypPredmetu typPredmetu) {
+    public Predmet(String nazev, int sila, TypPredmetu typPredmetu) {
         this.nazev = nazev;
         this.sila = sila;
-        this.objem = objem;
         this.typPredmetu = typPredmetu;
     }
-
-    public Predmet(String nazev, int objem, TypPredmetu typPredmetu, int heal) {
+    public Predmet(String nazev, int sila, TypPredmetu typPredmetu,int cena) {
         this.nazev = nazev;
-        this.objem = objem;
+        this.sila = sila;
+        this.typPredmetu = typPredmetu;
+        this.cena = cena;
+        this.hodnota = cena;
+    }
+
+    public Predmet(String nazev, TypPredmetu typPredmetu, int heal) {
+        this.nazev = nazev;
         this.typPredmetu = typPredmetu;
         this.heal = heal;
 
     }
-
-    public Predmet(String nazev, int objem) {
+    public Predmet(String nazev, TypPredmetu typPredmetu, int heal,int cena) {
         this.nazev = nazev;
-        this.objem = objem;
+        this.typPredmetu = typPredmetu;
+        this.heal = heal;
+        this.cena = cena;
+        this.hodnota = cena;
+
     }
 
-    public String toString1() {
-        return "Predmet{" +
-                "nazev='" + nazev + '\'' +
-                ", sila=" + sila +
-                ", objem=" + objem +
-                ", typPredmetu=" + typPredmetu +
-                '}';
+    public Predmet(String nazev,int hodnota) {
+        this.nazev = nazev;
+        this.hodnota = hodnota;
+
     }
 
     @Override
     public String toString() {
         return "Predmet{" +
                 "nazev='" + nazev + '\'' +
-                ", objem=" + objem +
-                ", typPredmetu=" + typPredmetu +
+                ", sila=" + sila +
+                ", hodnota=" + hodnota +
                 ", heal=" + heal +
                 '}';
     }
@@ -66,13 +72,6 @@ public class Predmet {
         this.sila = sila;
     }
 
-    public int getObjem() {
-        return objem;
-    }
-
-    public void setObjem(int objem) {
-        this.objem = objem;
-    }
 
     public TypPredmetu getTypPredmetu() {
         return typPredmetu;
@@ -90,4 +89,19 @@ public class Predmet {
         this.heal = heal;
     }
 
+    public int getCena() {
+        return cena;
+    }
+
+    public void setCena(int cena) {
+        this.cena = cena;
+    }
+
+    public int getHodnota() {
+        return hodnota;
+    }
+
+    public void setHodnota(int hodnota) {
+        this.hodnota = hodnota;
+    }
 }
