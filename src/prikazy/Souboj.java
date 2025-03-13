@@ -16,10 +16,10 @@ public class Souboj extends Command {
     @Override
     public String execute() {
         Scanner sc = new Scanner(System.in);
+        Batoh b = new Batoh();
         System.out.println("Zvolte si 1-3");
         int currentLocation = 0;
         currentLocation = sc.nextInt();
-        Hrac hrac = new Hrac();
 
 
 
@@ -28,68 +28,75 @@ public class Souboj extends Command {
                 Monstrum monstrum = new Monstrum("Pavouk",6,50); //trhlina
                 monstrum.pridaniLoot();
                 System.out.println("Jsi v souboji s  " + monstrum);
-                while (hrac.getZivoty()>0&&monstrum.getZivoty()>0){
+                while (Hrac.getZivoty()>0&&monstrum.getZivoty()>0){
                     System.out.println(monstrum.getJmeno() +", " +monstrum.getZivoty());
-                    System.out.println(hrac.getZivoty());
-                    monstrum.setZivoty(monstrum.getZivoty()- hrac.getSila());
+                    System.out.println(Hrac.getZivoty());
+                    monstrum.setZivoty(monstrum.getZivoty()- Hrac.getSila());
                     if(monstrum.getZivoty()<=0){
                         System.out.println("Vyhral si");
-
-                        vyhra.add(monstrum.getMonstra1().get(rd.nextInt(4)));
+                        int cislo = rd.nextInt(4);
+                        b.getBatoh().add(monstrum.getMonstra1().get(cislo));
+                        vyhra.add(monstrum.getMonstra1().get(cislo));
                         System.out.println(getVyhra());
 
                     }
-                    hrac.setZivoty(hrac.getZivoty()-monstrum.getSila());
-                    if(hrac.getZivoty()<=0){
+                    Hrac.setZivoty(Hrac.getZivoty()-monstrum.getSila());
+                    if(Hrac.getZivoty()<=0){
                         System.out.println("Zemrel jsi");
                     }
 
-
                 }
-
-
+                break;
             case 2:
                 Monstrum monstrum2 = new Monstrum("Vlkodlak",10,120);//les
                 monstrum2.pridaniLoot2();
                 System.out.println("Jsi v souboji s  " + monstrum2);
-                while (hrac.getZivoty()>0&&monstrum2.getZivoty()>0){
+                while (Hrac.getZivoty()>0&&monstrum2.getZivoty()>0){
                     System.out.println(monstrum2.getJmeno() +", " +monstrum2.getZivoty());
-                    System.out.println(hrac.getZivoty());
-                    monstrum2.setZivoty(monstrum2.getZivoty()- hrac.getSila());
+                    System.out.println(Hrac.getZivoty());
+                    monstrum2.setZivoty(monstrum2.getZivoty()- Hrac.getSila());
                     if(monstrum2.getZivoty()<=0){
                         System.out.println("Vyhral si");
 
-                        vyhra.add(monstrum2.getMonstra2().get(rd.nextInt(4)));
+                        int cislo2 = rd.nextInt(4);
+
+                        b.getBatoh().add(monstrum2.getMonstra2().get(cislo2));
+                        vyhra.add(monstrum2.getMonstra2().get(cislo2));
                         System.out.println(getVyhra());
 
                     }
-                    hrac.setZivoty(hrac.getZivoty()-monstrum2.getSila());
-                    if(hrac.getZivoty()<=0){
+                    Hrac.setZivoty(Hrac.getZivoty()-monstrum2.getSila());
+                    if(Hrac.getZivoty()<=0){
                         System.out.println("Zemrel jsi");
                     }
+
                 }
+                break;
             case 3:
                 Monstrum monstrum3 = new Monstrum("Sirena",9,80);    //jezero, polibit moznost = hned smrt?
                 monstrum3.pridaniLoot3();
                 System.out.println("Jsi v souboji s  " + monstrum3);
-                while (hrac.getZivoty()>0&&monstrum3.getZivoty()>0){
+                while (Hrac.getZivoty()>0&&monstrum3.getZivoty()>0){
                     System.out.println(monstrum3.getJmeno() +", " +monstrum3.getZivoty());
-                    System.out.println(hrac.getZivoty());
-                    monstrum3.setZivoty(monstrum3.getZivoty()- hrac.getSila());
+                    System.out.println(Hrac.getZivoty());
+                    monstrum3.setZivoty(monstrum3.getZivoty()- Hrac.getSila());
                     if(monstrum3.getZivoty()<=0){
                         System.out.println("Vyhral si");
-
-                        vyhra.add(monstrum3.getMonstra3().get(rd.nextInt(4)));
+                        int cislo3 = rd.nextInt(4);
+                        b.getBatoh().add(monstrum3.getMonstra3().get(cislo3));
+                        vyhra.add(monstrum3.getMonstra3().get(cislo3));
                         System.out.println(getVyhra());
 
                     }
-                    hrac.setZivoty(hrac.getZivoty()-monstrum3.getSila());
-                    if(hrac.getZivoty()<=0){
+                    Hrac.setZivoty(Hrac.getZivoty()-monstrum3.getSila());
+                    if(Hrac.getZivoty()<=0){
                         System.out.println("Zemrel jsi");
                     }
 
-
                 }
+                break;
+            default:
+                System.out.println("Není volba");
 
         }
 

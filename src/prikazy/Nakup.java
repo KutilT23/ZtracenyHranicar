@@ -1,12 +1,12 @@
 package prikazy;
 
-
-
-public class Prikazy extends Command {
+public class Nakup extends Command{
     @Override
     public String execute() {
-      return "batoh, interakce, konec, pohyb, prikazy, pouzit, souboj, prodat, nakup";
-
+        Shop shop = new Shop();
+        shop.pridatVeci();
+        shop.nakup();
+        return "";
     }
 
     @Override

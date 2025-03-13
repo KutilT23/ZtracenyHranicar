@@ -16,6 +16,8 @@ public class Konzole {
         mapa.put("prikazy",new Prikazy());
         mapa.put("pohyb",new Pohyb());
         mapa.put("souboj",new Souboj());
+        mapa.put("prodat",new Prodat());
+        mapa.put("nakup",new Nakup());
 
     }
 
@@ -36,7 +38,7 @@ public class Konzole {
 
     public void start(){
         inicializace();
-        Batoh batoh = new Batoh();
+        System.out.println("Pro přehled příkazů napište: 'prikazy'");
         try{
             resetSouboru();
             do{

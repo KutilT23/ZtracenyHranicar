@@ -19,7 +19,6 @@ public class Batoh extends Command {
     public void pridani(Predmet p) {
         batoh.add(p);
     }
-    Hrac hrac = new Hrac();
     public void pouziti(){
 
         System.out.println();
@@ -32,17 +31,17 @@ public class Batoh extends Command {
                 ruka.clear();
                 ruka.add(getBatoh().get(i));
 
-                if(ruka.get(0).getTypPredmetu().equals(TypPredmetu.LEKTVARHEAL)&&hrac.getZivoty()<100){
+                if(ruka.get(0).getTypPredmetu().equals(TypPredmetu.LEKTVARHEAL)&&Hrac.getZivoty()<100){
 
-                    hrac.setZivoty(hrac.getZivoty()+ruka.get(0).getHeal());
+                    Hrac.setZivoty(Hrac.getZivoty()+ruka.get(0).getHeal());
                     getBatoh().remove(i);
                     ruka.clear();
 
-                    if(hrac.getZivoty()>100){
-                        hrac.setZivoty(100);
+                    if(Hrac.getZivoty()>100){
+                        Hrac.setZivoty(100);
                     }
 
-                    System.out.println(hrac.getZivoty());
+                    System.out.println(Hrac.getZivoty());
                     i--;
                 }
 

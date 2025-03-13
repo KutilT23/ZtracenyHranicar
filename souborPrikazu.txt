@@ -1,2 +1,4 @@
-souboj
-souboj
+nakup
+prodat
+nakup
+prodat
