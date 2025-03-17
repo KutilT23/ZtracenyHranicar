@@ -1,3 +1,5 @@
+package world;
+
 import prikazy.*;
 
 import java.io.BufferedWriter;
@@ -62,5 +64,13 @@ public class Konzole {
         try(BufferedWriter bw = new BufferedWriter(new FileWriter(souborPrikazu,false))){
         }catch(Exception e){
         }
+    }
+
+    public boolean isExit() {
+        return exit;
+    }
+
+    public void setExit(boolean exit) {
+        this.exit = exit;
     }
 }

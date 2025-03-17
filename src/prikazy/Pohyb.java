@@ -12,8 +12,7 @@ public class Pohyb extends Command {
     Scanner sc = new Scanner(System.in);
     @Override
     public String execute() {
-        map.nacistMapu();
-        map.getWorld();
+       // System.out.println(map.getWorld());
         System.out.println("Zvolte směr, kterým chcete jít");
         String direction = "";
         direction = sc.next();

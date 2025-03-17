@@ -9,9 +9,10 @@ import java.util.HashMap;
 
 
 public class WorldMap {
-    private HashMap<Integer, Location> world = new HashMap<>();
-    private int start = 0;
-    private int currentPosition = start;
+    static private HashMap<Integer, Location> world = new HashMap<>();
+    private static int start = 0;
+    private static int currentPosition = start;
+    public static boolean maMapu = false;
 
     public boolean nacistMapu() {
         try (BufferedReader br = new BufferedReader(new FileReader("mapa.txt"))) {
@@ -25,6 +26,7 @@ public class WorldMap {
                 );
                 world.put(Integer.valueOf(lines[0]), location);
             }
+
             return true;
         } catch (IOException e) {
             return false;
@@ -32,16 +34,21 @@ public class WorldMap {
 
     }
 
-    public Location getCurrentPosition(){
+    public Location getCurrentPosition1(){
         return world.get(currentPosition);
+    }
+
+    static public int getCurrentPosition() {
+        return currentPosition;
     }
 
     public HashMap<Integer, Location> getWorld() {
         return world;
     }
-    public String move(String direction) {
+
+    public String move(String smer) {
         int dirIndex;
-        switch (direction.toLowerCase()) {
+        switch (smer.toLowerCase()) {
             case "sever":
                 dirIndex = 0;
                 break;
@@ -62,6 +69,9 @@ public class WorldMap {
         if (newPosition == -1) {
             return "Tímto směrem nelze jít.";
         } else {
+            if(currentPosition == 0&&maMapu==false) {
+                return "Tímto směrem nelze jít bez mapy";
+            }
             currentPosition = newPosition;
             return "Přesunuli jste se na " + world.get(currentPosition).getName();
         }
