@@ -12,6 +12,7 @@ public class Shop {
         return shop;
     }
     public void pridatVeci(){
+        shop.clear();
         shop.add(new Predmet("sekyra",8,TypPredmetu.ZBRAN,4));
         shop.add(new Predmet("mec",10,TypPredmetu.ZBRAN,5));
         shop.add(new Predmet("kladivo",6,TypPredmetu.ZBRAN,3));
@@ -101,6 +102,10 @@ public class Shop {
     }
     public String prodej(){
         Batoh b = new Batoh();
+        if(b.getBatoh().isEmpty()){
+            System.out.println("V batohu nic není");
+        }else{
+
         System.out.println("Vítej v mém krámku Hraničáři, zde můžeš prodat vše co vlastníš");
         System.out.println("Obsah tvého batohu: " + b.getBatoh());
         System.out.println("Počet tvých zlaťáků: " + Hrac.getPenize());
@@ -115,8 +120,7 @@ public class Shop {
                 return"Batoh: " + b.getBatoh() + " Zlaťáky: " + Hrac.getPenize();
             }
 
-
-
+            }
         }
         return "Předmět nenalezen";
     }

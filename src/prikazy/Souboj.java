@@ -25,14 +25,14 @@ public class Souboj extends Command {
 
         WorldMap wm = new WorldMap();
 
-        int currentPos = wm.getCurrentPosition();
-        System.out.println("Aktuální pozice: " + currentPos);
+        int aktualniPozice = wm.getCurrentPosition();
+        System.out.println("Aktuální pozice: " + aktualniPozice);
 
 
-        if (currentPos == 5 || currentPos == 6 || currentPos == 7) {
-            System.out.println("Jsi na speciální lokaci: " + currentPos);
+        if (aktualniPozice == 5 || aktualniPozice == 6 || aktualniPozice == 7 || aktualniPozice == 2) {
+            System.out.println("Jsi na lokaci s monstry: " + aktualniPozice);
 
-            switch (currentPos) {
+            switch (aktualniPozice) {
                 case 5:
                     Monstrum monstrum = new Monstrum("Pavouk", 3, 50); //trhlina
                     monstrum.pridaniLoot();
@@ -69,6 +69,7 @@ public class Souboj extends Command {
                         Hrac.setZivoty(Hrac.getZivoty() - monstrum2.getSila());
                         if (Hrac.getZivoty() <= 0) {
                             System.out.println("Zemřel jsi");
+                            jeMrtvy = true;
                         }
                     }
                     break;
@@ -88,6 +89,7 @@ public class Souboj extends Command {
                         Hrac.setZivoty(Hrac.getZivoty() - monstrum3.getSila());
                         if (Hrac.getZivoty() <= 0) {
                             System.out.println("Zemřel jsi");
+                            jeMrtvy = true;
                         }
                     }
                     break;
@@ -98,7 +100,7 @@ public class Souboj extends Command {
                     System.out.println("Není volba");
             }
         } else {
-            System.out.println("Tato pozice není speciální.");
+            System.out.println("Tato pozice nemá monstra.");
         }
 
         return "";

@@ -46,6 +46,7 @@ public class WorldMap {
         return world;
     }
 
+
     public String move(String smer) {
         int dirIndex;
         switch (smer.toLowerCase()) {
@@ -69,11 +70,11 @@ public class WorldMap {
         if (newPosition == -1) {
             return "Tímto směrem nelze jít.";
         } else {
-            if(currentPosition == 0&&maMapu==false) {
+            if(currentPosition == 0&&maMapu==false&&smer.equals("jih")) {
                 return "Tímto směrem nelze jít bez mapy";
             }
             currentPosition = newPosition;
-            return "Přesunuli jste se na " + world.get(currentPosition).getName();
+            return "Přesunuli jste se na lokaci:  " + world.get(currentPosition).getName();
         }
     }
 }

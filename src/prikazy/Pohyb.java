@@ -13,7 +13,8 @@ public class Pohyb extends Command {
     @Override
     public String execute() {
        // System.out.println(map.getWorld());
-        System.out.println("Zvolte směr, kterým chcete jít");
+        System.out.println("Nacházíš se na lokaci: " + map.getCurrentPosition1().getName());
+        System.out.println("Zvolte směr, kterým chcete jít: sever, jih, zapad, vychod");
         String direction = "";
         direction = sc.next();
         direction = direction.toLowerCase();
