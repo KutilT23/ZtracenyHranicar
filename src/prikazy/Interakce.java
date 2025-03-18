@@ -32,8 +32,7 @@ public class Interakce extends Command {
 
             if(nalezen == false){
                 Random rd = new Random();
-                //nahoda = rd.nextInt(6);
-                nahoda =2;
+                nahoda = rd.nextInt(6);
             }else{
                 nahoda = 2;
             }
