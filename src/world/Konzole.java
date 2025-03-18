@@ -20,7 +20,6 @@ public class Konzole {
         mapa.put("souboj",new Souboj());
         mapa.put("prodat",new Prodat());
         mapa.put("nakup",new Nakup());
-
     }
 
     private Scanner scanner = new Scanner(System.in);

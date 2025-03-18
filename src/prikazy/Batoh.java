@@ -9,6 +9,7 @@ public class Batoh extends Command {
 
     private static ArrayList<Predmet>batoh = new ArrayList<>();
     private static ArrayList<Predmet> ruka = new ArrayList();
+    boolean predmetNalezen = false;
 
 
 
@@ -25,9 +26,13 @@ public class Batoh extends Command {
         Scanner sc = new Scanner(System.in);
         String odpoved = sc.next();
         for (int i = 0; i < getBatoh().size(); i++) {
-            if(odpoved.equals(getBatoh().get(i).getNazev())){
+            String nazevPredmetu2 = batoh.get(i).getNazev();
+            TypPredmetu typPredmetu2 = batoh.get(i).getTypPredmetu();
+
+            if(nazevPredmetu2.equals(odpoved) && typPredmetu2 != null){
                 ruka.clear();
                 ruka.add(getBatoh().get(i));
+                System.out.println(ruka.get(0).getTypPredmetu());
                 Hrac.setSila(Hrac.getSila()+ruka.get(0).getSila());
 
                 if(ruka.get(0).getTypPredmetu().equals(TypPredmetu.LEKTVARHEAL)&&Hrac.getZivoty()<100){
@@ -45,12 +50,22 @@ public class Batoh extends Command {
                     System.out.println("Batoh:" + getBatoh());
                     break;
                 }
+                predmetNalezen = true;
+                if(ruka.get(0).getTypPredmetu().equals(TypPredmetu.LEKTVARHEAL)&&Hrac.getZivoty()==100){
+                    System.out.println("Máš plné životy");
+                    System.out.println(Hrac.getZivoty());
+
+                }
+
 
                 System.out.println("Batoh" + getBatoh());
                 System.out.println("Předmět pouzivany: " + getRuka());
 
             }
 
+        }
+        if(!predmetNalezen){
+            System.out.println("Předmět nenalezen");
         }
     }
     @Override
@@ -59,17 +74,17 @@ public class Batoh extends Command {
         Scanner sc = new Scanner(System.in);
         int odpoved = sc.nextInt();
 
-            switch (odpoved){
-                case 1:
-                    System.out.println(getBatoh());
-                    break;
-                case 2:
-                    pouziti();
-                    break;
-                    default:
-                        System.out.println("Není volba");
-                        break;
-            }
+        switch (odpoved){
+            case 1:
+                System.out.println(getBatoh());
+                break;
+            case 2:
+                pouziti();
+                break;
+            default:
+                System.out.println("Není volba");
+                break;
+        }
 
        /* for (int i = 0; i < batoh.size(); i++) {
             if(batoh.get(i).getHeal()==0){

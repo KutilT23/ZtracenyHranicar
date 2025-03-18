@@ -54,7 +54,7 @@ public class Souboj extends Command {
                     }
                     break;
                 case 6:
-                    Monstrum monstrum2 = new Monstrum("Vlkodlak", 8, 100); //les
+                    Monstrum monstrum2 = new Monstrum("Vlkodlak", 6, 100); //les
                     monstrum2.pridaniLoot2();
                     System.out.println("Jsi v souboji s  " + monstrum2);
                     while (Hrac.getZivoty() > 0 && monstrum2.getZivoty() > 0) {
@@ -81,6 +81,7 @@ public class Souboj extends Command {
                         System.out.println(monstrum3.getJmeno() + ", Hp: " + monstrum3.getZivoty() + ", Síla: " + monstrum3.getSila());
                         System.out.println("Hráč, Hp: " + Hrac.getZivoty() + ", Síla: " + Hrac.getSila());
                         monstrum3.setZivoty(monstrum3.getZivoty() - Hrac.getSila());
+
                         if (monstrum3.getZivoty() <= 0) {
                             System.out.println("Vyhrál jsi");
                             b.getBatoh().add(monstrum3.getMonstra3().get(rd.nextInt(4)));
@@ -94,6 +95,50 @@ public class Souboj extends Command {
                     }
                     break;
                 case 2:
+                    Monstrum monstrum4 = new Monstrum("Drak", 10, 150); //trhlina
+                    System.out.println("Jsi v souboji s  " + monstrum4);
+                    while (Hrac.getZivoty() > 0 && monstrum4.getZivoty() > 0) {
+                        System.out.println(monstrum4.getJmeno() + ", Hp: " + monstrum4.getZivoty() + ", Síla: " + monstrum4.getSila());
+                        System.out.println("Hráč, Hp: " + Hrac.getZivoty() + ", Síla: " + Hrac.getSila());
+                        if(Hrac.getZivoty() >0&& Hrac.getZivoty()<=20) {
+                            System.out.println("Chcete se vyhealovat?  (ano, ne)");
+                            String odpoved = sc.next();
+                            odpoved = odpoved.toLowerCase();
+                            while (!odpoved.equals("ano")&&!odpoved.equals("ne")) {
+                                odpoved = sc.next();
+                                odpoved = odpoved.toLowerCase();
+                            }
+                            switch (odpoved){
+                                case "ano":
+                                    for (int i = 0; i <b.getBatoh().size() ; i++) {
+                                        if(b.getBatoh().get(i).getNazev().equals("heal")){
+                                            Hrac.setZivoty(Hrac.getZivoty() + b.getBatoh().get(i).getHeal());
+                                            b.getBatoh().remove(i);
+                                            break;
+                                        }
+                                    }
+                                    break;
+                                case "ne":
+                                    System.out.println("Nuže dobrá, tak heal nebude");
+                                    break;
+                                default:
+                                    return "";
+                            }
+
+                        }
+                        System.out.println(monstrum4.getJmeno() + ", Hp: " + monstrum4.getZivoty() + ", Síla: " + monstrum4.getSila());
+                        System.out.println("Hráč, Hp: " + Hrac.getZivoty() + ", Síla: " + Hrac.getSila());
+                        monstrum4.setZivoty(monstrum4.getZivoty() - Hrac.getSila());
+                        if (monstrum4.getZivoty() <= 0) {
+                            System.out.println("Vyhrál jsi");
+                            System.out.println("Porazil draka a vyhrál hru"); // možná přidání hlavy draka do inventáře a potom s ní dojít za ondriganem a pochlubit se mu
+                        }
+                        Hrac.setZivoty(Hrac.getZivoty() - monstrum4.getSila());
+                        if (Hrac.getZivoty() <= 0) {
+                            System.out.println("Zemřel jsi na úplném konci");
+                            jeMrtvy = true;
+                        }
+                    }
 
                     break;
                 default:

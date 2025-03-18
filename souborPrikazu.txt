@@ -1,0 +1,5 @@
+batoh
+pohyb
+prodat
+nakup
+batoh

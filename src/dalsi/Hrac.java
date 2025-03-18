@@ -1,9 +1,9 @@
 package dalsi;
 
 public class Hrac {
-    private static int zivoty = 95;
+    private static int zivoty = 100;
     private static int sila = 5;
-    private static int penize = 5;
+    private static int penize = 0;
 
     public static int getPenize() {
         return penize;

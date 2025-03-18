@@ -12,6 +12,13 @@ public class Interakce extends Command {
     private boolean splnenUkol1 = false;
     private boolean splnenUkol2 = false;
     private boolean splnenUkol3 = false;
+    Batoh batoh = new Batoh();
+    private boolean maPavoucioko=false;
+    private boolean maPavoucisrdce = false;
+    private boolean maVlkodlacitesak = false;
+    private boolean maVlkodlacikrev = false;
+    private boolean maSirenimelodie = false;
+    private boolean maSirenislzy = false;
 
     @Override
     public String execute() {
@@ -21,11 +28,12 @@ public class Interakce extends Command {
 
         if(aktualniPozice==1){
 
-        Scanner sc = new Scanner(System.in);
+            Scanner sc = new Scanner(System.in);
 
-        if(nalezen == false){
+            if(nalezen == false){
                 Random rd = new Random();
-                nahoda = rd.nextInt(6);
+                //nahoda = rd.nextInt(6);
+                nahoda =2;
             }else{
                 nahoda = 2;
             }
@@ -42,32 +50,88 @@ public class Interakce extends Command {
 
 
                     if(splnenUkol1==false){
-                        System.out.println("První úkol: ");
-                        splnenUkol1 = true;
+                        System.out.println("První úkol: Získej PavoučíOko a PavoučíSrdce");
+                        for (int i = 0; i < batoh.getBatoh().size(); i++) {
+                            if (batoh.getBatoh().get(i).getNazev().equals("pavoucioko")) {
+                                maPavoucioko = true;
+                            }
+                            if (batoh.getBatoh().get(i).getNazev().equals("pavoucisrdce")) {
+                                maPavoucisrdce = true;
+                            }
+                            if (maPavoucioko && maPavoucisrdce) {
+                                System.out.println("Ano máš vše, a teď to běž prodat do vedlejšího krámku");
+                                splnenUkol1 = true;
+                                break;
+                            }
+
+                        }
+
+
                     }else if(splnenUkol1==true&&splnenUkol2==false){
-                        System.out.println("Druhý úkol: ");
-                        splnenUkol2 = true;
+                        System.out.println("Druhý úkol: Získej VlkodlačíKrev a VlkodlačíTesák ");
+                        for (int i = 0; i < batoh.getBatoh().size(); i++) {
+                            if (batoh.getBatoh().get(i).getNazev().equals("vlkodlacikrev")) {
+                                maVlkodlacikrev = true;
+                            }
+                            if (batoh.getBatoh().get(i).getNazev().equals("vlkodlacitesak")) {
+                                maVlkodlacitesak = true;
+                            }
+                            if (maVlkodlacikrev && maVlkodlacitesak) {
+                                System.out.println("Ano máš vše, a zase to můžeš jít prodat vedle do krámku");
+                                splnenUkol2 = true;
+                                break;
+                            }
+
+                        }
+
                     }else if(splnenUkol1==true&&splnenUkol2==true&&splnenUkol3==false){
-                        System.out.println("Třetí úkol: ");
-                        splnenUkol3 = true;
+                        System.out.println("Třetí úkol: Získej SireníMelodie a SireníSlzy ");
+                        for (int i = 0; i < batoh.getBatoh().size(); i++) {
+                            if (batoh.getBatoh().get(i).getNazev().equals("sirenimelodie")) {
+                                maSirenimelodie = true;
+                            }
+                            if (batoh.getBatoh().get(i).getNazev().equals("sirenislzy")) {
+                                maSirenislzy = true;
+                            }
+                            if (maSirenimelodie && maSirenislzy) {
+                                System.out.println("Ano máš vše, a za tvojí snahu, zde máš mapu k hradu. Můžeš jí klidně prodat, neboť cesta k hradu " +
+                                        "se ti právě odemkla a už ji nepotřebuješ. P.S. Hrad se nachází na jih od Hostince. ");
+                                splnenUkol3 = true;
+                                WorldMap.maMapu=true;
+                                batoh.getBatoh().add(new Predmet("mapa",10));
+                                break;
+                            }
+
+                        }
                     }else if(splnenUkol1==true&&splnenUkol2==true&&splnenUkol3==true){
-                        WorldMap.maMapu=true;
+                        System.out.println("Již nejsou žádné další úkoly");
                     }
                     break;
                 case 3:
                     System.out.println("Ahoj chlapáku, nechceš využít mích služeb?  (ano,ne)");
                     String odpoved = sc.next();
                     odpoved.toLowerCase();
+                    while (!odpoved.equals("ano") && !odpoved.equals("ne")) {
+                        System.out.println("Není volba (ano, ne)");
+                        odpoved = sc.next();
+                        odpoved.toLowerCase();
+                    }
                     switch (odpoved) {
                         case "ano":
                             System.out.println("Byl si podveden a přišel si o všechny své peníze");
                             Hrac.setPenize(0);
                             System.out.println("Počet aktuálních peněz: " + Hrac.getPenize());
                             break;
-                        default:
+                        case "ne":
                             System.out.println("Unikl si podvodu, jsi bystrý chlapík");
+                            break;
+                        default:
+                            return "";
+
 
                     }
+
+
                     break;
                 case 4:
                     System.out.println("S pánem bohem");
@@ -77,7 +141,7 @@ public class Interakce extends Command {
                     break;
                 default:
                     System.out.println("Chyba v textu");
-                }
+            }
 
         }else{
             System.out.println("Nejsi v okolí vesničanů");
