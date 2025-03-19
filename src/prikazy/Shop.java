@@ -17,94 +17,46 @@ public class Shop {
         shop.add(new Predmet("mec",10,TypPredmetu.ZBRAN,5));
         shop.add(new Predmet("kladivo",6,TypPredmetu.ZBRAN,3));
         shop.add(new Predmet("lopata",4,TypPredmetu.ZBRAN,2));
-        shop.add(new Predmet("heal",TypPredmetu.LEKTVARHEAL,50,2));
         shop.add(new Predmet("dyka",2,TypPredmetu.ZBRAN,1));
+        shop.add(new Predmet("heal",TypPredmetu.LEKTVARHEAL,50,2));
+        shop.add(new Predmet("healm",TypPredmetu.LEKTVARHEAL,25,1));
+
 
     }
+    private boolean jeVShopu = false;
 
     public void nakup(){
         Batoh b = new Batoh();
         if(Hrac.getPenize()==0){
             System.out.println("Nemáš peníze");
         }else{
-
-
-            System.out.println("Vítej v mém obchodě Hraničáři, co si chceš koupit? " + "\n sekyra: Síla-8, Cena-4 \n mec: Síla-10, Cena-5 \n kladivo: Síla-6, Cena-3 \n lopata: Síla-4, Cena-2\n heal Efekt-50Hp+, Cena-2 \n dyka: Síla-2, Cena-1 ");
+            System.out.println("Vítej v mém obchodě Hraničáři, co si chceš koupit? " + "\n sekyra: Síla-8, Cena-4 \n mec: Síla-10, Cena-5 \n kladivo: Síla-6, Cena-3 \n lopata: Síla-4, Cena-2\n dyka: Síla-2, Cena-1 \n heal Efekt-50Hp+, Cena-2 \n healm Efekt-25Hp+, Cena-1 ");
             System.out.println("Počet tvých zlaťáků: " + Hrac.getPenize());
             Scanner sc = new Scanner(System.in);
             String odpoved = sc.next();
             odpoved = odpoved.toLowerCase();
-            switch (odpoved){
-                case "sekyra":
-                    if(Hrac.getPenize()>=shop.get(0).getCena()){
-                        b.getBatoh().add(shop.get(0));
-                        Hrac.setPenize(Hrac.getPenize()-shop.get(0).getCena());
-                        System.out.println("Úspěšně nakoupeno "+ shop.get(0).getNazev());
-                        System.out.println("Obsah batohu: " + b.getBatoh());
-                        System.out.println("Zbývající peníze: " + Hrac.getPenize());
+            for (int i = 0; i < shop.size(); i++) {
+                if(odpoved.equals(shop.get(i).getNazev())){
 
-                    }else{
-                        System.out.println("Nemáš dost zlaťáků");
-                    }
-                    break;
-                case "mec":
-                    if(Hrac.getPenize()>=shop.get(1).getCena()){
-                        b.getBatoh().add(shop.get(1));
-                        Hrac.setPenize(Hrac.getPenize()-shop.get(1).getCena());
-                        System.out.println("Úspěšně nakoupeno "+ shop.get(1).getNazev());
-                        System.out.println("Obsah batohu: " + b.getBatoh());
+                    if(Hrac.getPenize()-shop.get(i).getCena()>=0){
+                        Hrac.setPenize(Hrac.getPenize()-shop.get(i).getCena());
+                        b.getBatoh().add(shop.get(i));
+                        System.out.println("Úspěšně nakoupeno "+ shop.get(i).getNazev());
                         System.out.println("Zbývající peníze: " + Hrac.getPenize());
                     }else{
-                        System.out.println("Nemáš dost zlaťáků");
+                        System.out.println("Nemáš dostatek zlaťáků");
                     }
-                    break;
-                case "kladivo":
-                    if(Hrac.getPenize()>=shop.get(2).getCena()){
-                        b.getBatoh().add(shop.get(2));
-                        Hrac.setPenize(Hrac.getPenize()-shop.get(2).getCena());
-                        System.out.println("Úspěšně nakoupeno "+ shop.get(2).getNazev());
-                        System.out.println("Obsah batohu: " + b.getBatoh());
-                        System.out.println("Zbývající peníze: " + Hrac.getPenize());
-                    }else{
-                        System.out.println("Nemáš dost zlaťáků");
-                    }
-                    break;
-                case "lopata":
-                    if(Hrac.getPenize()>=shop.get(3).getCena()){
-                        b.getBatoh().add(shop.get(3));
-                        Hrac.setPenize(Hrac.getPenize()-shop.get(3).getCena());
-                        System.out.println("Úspěšně nakoupeno "+ shop.get(3).getNazev());
-                        System.out.println("Obsah batohu: " + b.getBatoh());
-                        System.out.println("Zbývající peníze: " + Hrac.getPenize());
-                    }else{
-                        System.out.println("Nemáš dost zlaťáků");
-                    }
-                case "heal":
-                    if(Hrac.getPenize()>=shop.get(4).getCena()){
-                        b.getBatoh().add(shop.get(4));
-                        Hrac.setPenize(Hrac.getPenize()-shop.get(4).getCena());
-                        System.out.println("Úspěšně nakoupeno "+ shop.get(4).getNazev());
-                        System.out.println("Obsah batohu: " + b.getBatoh());
-                        System.out.println("Zbývající peníze: " + Hrac.getPenize());
-                    }else{
-                        System.out.println("Nemáš dost zlaťáků");
-                    }
-                    break;
-                case "dyka":
-                    if(Hrac.getPenize()>=shop.get(5).getCena()){
-                        b.getBatoh().add(shop.get(5));
-                        Hrac.setPenize(Hrac.getPenize()-shop.get(5).getCena());
-                        System.out.println("Úspěšně nakoupeno "+ shop.get(5).getNazev());
-                        System.out.println("Obsah batohu: " + b.getBatoh());
-                        System.out.println("Zbývající peníze: " + Hrac.getPenize());
-                    }else{
-                        System.out.println("Nemáš dost zlaťáků");
-                    }
-                    break;
-                default:
-                    System.out.println("Předmět není v nabídce");
+                    jeVShopu = true;
+                }
+
+
             }
+            if(!jeVShopu){
+                System.out.println("Předmět není v prodeji");
+            }
+
         }
+
 
     }
     public String prodej(){
@@ -124,7 +76,7 @@ public class Shop {
                     Hrac.setPenize(Hrac.getPenize()+b.getBatoh().get(i).getHodnota());
                     b.getBatoh().remove(i);
                     System.out.println("Úspěšně prodáno :)");
-                    return"Batoh: " + b.getBatoh() + " Zlaťáky: " + Hrac.getPenize();
+                    return"Batoh: " + b.getBatoh() + " \nPočet tvých zlaťáků: " + Hrac.getPenize();
                 }
 
             }

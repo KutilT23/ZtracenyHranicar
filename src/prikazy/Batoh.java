@@ -48,29 +48,30 @@ public class Batoh extends Command {
                     System.out.println(Hrac.getZivoty());
 
                     System.out.println("Batoh:" + getBatoh());
+                    predmetNalezen = true;
                     break;
                 }
                 predmetNalezen = true;
                 if(ruka.get(0).getTypPredmetu().equals(TypPredmetu.LEKTVARHEAL)&&Hrac.getZivoty()==100){
-                    System.out.println("Máš plné životy");
+                    System.out.println("Již máš plné životy");
                     System.out.println(Hrac.getZivoty());
+                    ruka.clear();
 
                 }
 
-
                 System.out.println("Batoh" + getBatoh());
-                System.out.println("Předmět pouzivany: " + getRuka());
+                System.out.println("Předmět používaný: " + getRuka());
 
             }
 
         }
         if(!predmetNalezen){
-            System.out.println("Předmět nenalezen");
+            System.out.println("Předmět nenalezen/nelze použít");
         }
     }
     @Override
     public String execute() {
-        System.out.println("Pro prohlednuti stisknete 1 pro pouziti 2");
+        System.out.println("Co chcete udělat: \n1: Prohlédnout si batoh\n2: Použít předmět z batohu");
         Scanner sc = new Scanner(System.in);
         int odpoved = sc.nextInt();
 

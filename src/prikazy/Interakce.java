@@ -97,7 +97,7 @@ public class Interakce extends Command {
                                         "se ti právě odemkla a už ji nepotřebuješ. P.S. Hrad se nachází na jih od Hostince. ");
                                 splnenUkol3 = true;
                                 WorldMap.maMapu=true;
-                                batoh.getBatoh().add(new Predmet("mapa",10));
+                                batoh.getBatoh().add(new Predmet("mapa",5));
                                 break;
                             }
 

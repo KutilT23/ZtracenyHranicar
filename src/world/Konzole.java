@@ -11,6 +11,7 @@ public class Konzole {
     private boolean exit = false;
     private HashMap<String, Command> mapa = new HashMap<>();
     public static String souborPrikazu = "souborPrikazu.txt";
+    WorldMap wm = new WorldMap();
     public void inicializace(){
         mapa.put("batoh",new Batoh());
         mapa.put("interakce",new Interakce());
@@ -20,6 +21,7 @@ public class Konzole {
         mapa.put("souboj",new Souboj());
         mapa.put("prodat",new Prodat());
         mapa.put("nakup",new Nakup());
+        mapa.put("pribeh",new TextVypis());
     }
 
     private Scanner scanner = new Scanner(System.in);
@@ -38,6 +40,7 @@ public class Konzole {
     }
 
     public void start(){
+        wm.nacistMapu();
         inicializace();
         System.out.println("Pro přehled příkazů napište: 'prikazy'");
         try{

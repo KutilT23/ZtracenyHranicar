@@ -21,7 +21,6 @@ public class Souboj extends Command {
     public String execute() {
         Scanner sc = new Scanner(System.in);
         Batoh b = new Batoh();
-        System.out.println("Zvolte si 1-3");
 
         WorldMap wm = new WorldMap();
 
@@ -74,7 +73,7 @@ public class Souboj extends Command {
                     }
                     break;
                 case 7:
-                    Monstrum monstrum3 = new Monstrum("Sirena", 10, 80); //jezero
+                    Monstrum monstrum3 = new Monstrum("Sirena", 10, 80); //jezero    bonusovy souboj
                     monstrum3.pridaniLoot3();
                     System.out.println("Jsi v souboji s  " + monstrum3);
                     while (Hrac.getZivoty() > 0 && monstrum3.getZivoty() > 0) {
