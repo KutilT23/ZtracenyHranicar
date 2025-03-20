@@ -9,7 +9,6 @@ public class Batoh extends Command {
 
     private static ArrayList<Predmet>batoh = new ArrayList<>();
     private static ArrayList<Predmet> ruka = new ArrayList();
-    boolean predmetNalezen = false;
 
 
 
@@ -19,7 +18,7 @@ public class Batoh extends Command {
     private String vypis = "";
 
     public void pouziti(){
-
+        boolean predmetNalezen = false;
         System.out.println();
         System.out.println(getBatoh());
         System.out.println("Který předmět chcete použít? ");
@@ -30,17 +29,17 @@ public class Batoh extends Command {
             TypPredmetu typPredmetu2 = batoh.get(i).getTypPredmetu();
 
             if(nazevPredmetu2.equals(odpoved) && typPredmetu2 != null){
+                Hrac.setSila(5);
                 ruka.clear();
                 ruka.add(getBatoh().get(i));
-                System.out.println(ruka.get(0).getTypPredmetu());
                 Hrac.setSila(Hrac.getSila()+ruka.get(0).getSila());
+                System.out.println("Hráčova síla: " + Hrac.getSila());
 
                 if(ruka.get(0).getTypPredmetu().equals(TypPredmetu.LEKTVARHEAL)&&Hrac.getZivoty()<100){
 
                     Hrac.setZivoty(Hrac.getZivoty()+ruka.get(0).getHeal());
                     getBatoh().remove(i);
                     ruka.clear();
-
                     if(Hrac.getZivoty()>100){
                         Hrac.setZivoty(100);
                     }
@@ -73,13 +72,14 @@ public class Batoh extends Command {
     public String execute() {
         System.out.println("Co chcete udělat: \n1: Prohlédnout si batoh\n2: Použít předmět z batohu");
         Scanner sc = new Scanner(System.in);
-        int odpoved = sc.nextInt();
+        String odpoved = sc.next();
 
         switch (odpoved){
-            case 1:
-                System.out.println(getBatoh());
+            case "1":
+                System.out.println("Batoh: " + getBatoh());
+                System.out.println("Ruka: " + getRuka());
                 break;
-            case 2:
+            case "2":
                 pouziti();
                 break;
             default:

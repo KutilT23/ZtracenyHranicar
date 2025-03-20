@@ -4,3 +4,11 @@ nakup
 nakup
 batoh
 batoh
+prodta
+prodat
+batoh
+prodat
+nakup
+nakup
+batoh
+batoh

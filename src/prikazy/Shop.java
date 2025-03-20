@@ -60,6 +60,7 @@ public class Shop {
 
     }
     public String prodej(){
+        boolean jeVRuce = false;
         Batoh b = new Batoh();
         if(b.getBatoh().isEmpty()){
             System.out.println("V batohu nic není");
@@ -72,11 +73,23 @@ public class Shop {
             String prodani = sc.next();
             prodani = prodani.toLowerCase();
             for (int i = 0; i < b.getBatoh().size(); i++) {
+                if(!b.getRuka().isEmpty()&&b.getRuka().get(0).getNazev().equals(prodani)){
+                    jeVRuce = true;
+                    System.out.println(b.getRuka());
+                }
+                if (jeVRuce){
+                    b.getRuka().clear();
+                    System.out.println("Ruka je vyprazdnena");
+                    Hrac.setSila(5);
+
+                }
+
                 if(prodani.equals(b.getBatoh().get(i).getNazev())){
                     Hrac.setPenize(Hrac.getPenize()+b.getBatoh().get(i).getHodnota());
                     b.getBatoh().remove(i);
+
                     System.out.println("Úspěšně prodáno :)");
-                    return"Batoh: " + b.getBatoh() + " \nPočet tvých zlaťáků: " + Hrac.getPenize();
+                    return"Batoh:" + b.getBatoh() +"\nRuka:" + b.getRuka() + " \nPočet tvých zlaťáků: " + Hrac.getPenize();
                 }
 
             }
