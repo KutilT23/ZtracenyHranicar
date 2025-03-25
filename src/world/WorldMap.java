@@ -47,6 +47,7 @@ public class WorldMap {
     }
 
 
+
     public String move(String smer) {
         int dirIndex;
 

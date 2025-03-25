@@ -33,7 +33,7 @@ public class TextVypis extends  Command{
                 text7();
             break;
             default:
-                System.out.println("Chyba načítání");
+                return "chyba při načítání";
         }
 
         return "";

@@ -13,6 +13,7 @@ public class Souboj extends Command {
     ArrayList<Predmet>vyhra = new ArrayList<>();
     private boolean jeMrtvy = false;
 
+
     public ArrayList<Predmet> getVyhra() {
         return vyhra;
     }

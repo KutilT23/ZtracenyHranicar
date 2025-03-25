@@ -14,7 +14,7 @@ public class Prodat extends Command{
             shop.pridatVeci();
             System.out.println(shop.prodej());
         }else{
-            System.out.println("Nejsi ve vesnici");
+            return "nejsi ve vesnici";
         }
 
         return "";

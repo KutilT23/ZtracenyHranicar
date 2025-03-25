@@ -14,10 +14,11 @@ public class Nakup extends Command{
             shop.pridatVeci();
             shop.nakup();
         }else{
-            System.out.println("Nejsi ve vesnici");
+            return "nejsi ve vesnici";
         }
         return "";
     }
+
 
     @Override
     public boolean exit() {
