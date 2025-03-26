@@ -3,6 +3,9 @@ package prikazy;
 import world.WorldMap;
 
 public class Nakup extends Command{
+    /**
+     *  spusteni metod na pridani predmetu do shopu a jejich nasledný nakup
+     */
     @Override
     public String execute() {
         WorldMap wm = new WorldMap();
@@ -19,7 +22,9 @@ public class Nakup extends Command{
         return "";
     }
 
-
+    /**
+     * metoda na zjisteni zda program končí
+     */
     @Override
     public boolean exit() {
         return false;

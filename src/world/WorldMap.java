@@ -13,7 +13,9 @@ public class WorldMap {
     private static int start = 0;
     private static int currentPosition = start;
     public static boolean maMapu = false;
-
+    /**
+     * metoda pro nacteni mapy sveta z textoveho souboru
+     */
     public boolean nacistMapu() {
         try (BufferedReader br = new BufferedReader(new FileReader("mapa.txt"))) {
             String line;
@@ -37,7 +39,9 @@ public class WorldMap {
     public Location getCurrentPosition1(){
         return world.get(currentPosition);
     }
-
+    /**
+     * metoda pro ziskani aktualni pozice v int variante
+     */
     static public int getCurrentPosition() {
         return currentPosition;
     }
@@ -47,21 +51,23 @@ public class WorldMap {
     }
 
 
-
+    /**
+     * metoda na pohyb hrace svetem
+     */
     public String move(String smer) {
         int dirIndex;
 
         switch (smer.toLowerCase()) {
-            case "sever":
+            case "s":
                 dirIndex = 0;
                 break;
-            case "jih":
+            case "j":
                 dirIndex = 1;
                 break;
-            case "vychod":
+            case "v":
                 dirIndex = 2;
                 break;
-            case "zapad":
+            case "z":
                 dirIndex = 3;
                 break;
             default:

@@ -3,6 +3,9 @@ package prikazy;
 import world.WorldMap;
 
 public class Prodat extends Command{
+    /**
+     * metoda na spusteni metody na prodej
+     */
     @Override
     public String execute() {
         WorldMap wm = new WorldMap();
@@ -19,7 +22,9 @@ public class Prodat extends Command{
 
         return "";
     }
-
+    /**
+     * metoda na zjisteni zda program konci
+     */
     @Override
     public boolean exit() {
         return false;

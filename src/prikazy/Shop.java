@@ -11,6 +11,9 @@ public class Shop {
     public static ArrayList<Predmet> getShop() {
         return shop;
     }
+    /**
+     * metoda na pridani predmetu do shopu
+     */
     public void pridatVeci(){
         shop.clear();
         shop.add(new Predmet("sekyra",8,TypPredmetu.ZBRAN,4));
@@ -24,7 +27,9 @@ public class Shop {
 
     }
     private boolean jeVShopu = false;
-
+    /**
+     * metoda na nakup predmetu z shopu
+     */
     public void nakup(){
         Batoh b = new Batoh();
         if(Hrac.getPenize()==0){
@@ -59,6 +64,9 @@ public class Shop {
 
 
     }
+    /**
+     * metoda na prodej predmetu z inventare obchodnikovi
+     */
     public String prodej(){
         boolean jeVRuce = false;
         Batoh b = new Batoh();

@@ -17,7 +17,7 @@ class WorldMapTest {
     void move() {
         WorldMap wm = new WorldMap();
         wm.nacistMapu();
-        String smer = "sever";
+        String smer = "s";
         assertEquals("Přesunuli jste se na lokaci:  Vesnice", wm.move(smer));
     }
 }

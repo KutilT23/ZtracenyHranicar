@@ -16,7 +16,9 @@ public class Batoh extends Command {
         return batoh;
     }
     private String vypis = "";
-
+    /**
+     * metoda na použití předmětu v batohu - přidá předmět do listu ruka
+     */
     public void pouziti(){
         boolean predmetNalezen = false;
         System.out.println();
@@ -68,6 +70,9 @@ public class Batoh extends Command {
             System.out.println("Předmět nenalezen/nelze použít");
         }
     }
+    /**
+     * metoda na spusteni metod v batohu
+     */
     @Override
     public String execute() {
         System.out.println("Co chcete udělat: \n1: Prohlédnout si batoh\n2: Použít předmět z batohu");
@@ -87,19 +92,6 @@ public class Batoh extends Command {
                 break;
         }
 
-       /* for (int i = 0; i < batoh.size(); i++) {
-            if(batoh.get(i).getHeal()==0){
-                vypis += batoh.get(i).toString1();
-            }else{
-                vypis += batoh.get(i).toString();
-            }
-
-        }
-
-        */
-
-
-
         return "";
     }
 
@@ -114,7 +106,9 @@ public class Batoh extends Command {
     public ArrayList<Predmet> getRuka() {
         return ruka;
     }
-
+    /**
+     * metoda na zjisteni zda program konci
+     */
     @Override
     public boolean exit() {
         return false;

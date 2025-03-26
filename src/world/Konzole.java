@@ -12,6 +12,9 @@ public class Konzole {
     private HashMap<String, Command> mapa = new HashMap<>();
     public static String souborPrikazu = "souborPrikazu.txt";
     WorldMap wm = new WorldMap();
+    /**
+     * metoda pro pridani prikazu do hashmapy
+     */
     public void inicializace(){
         mapa.put("batoh",new Batoh());
         mapa.put("interakce",new Interakce());
@@ -25,6 +28,9 @@ public class Konzole {
     }
 
     private Scanner scanner = new Scanner(System.in);
+    /**
+     * metoda pro provedeni prikazu
+     */
     private void proved(){
         System.out.println("Napište co chcete dělat");
         String prikaz = scanner.nextLine();
@@ -38,11 +44,15 @@ public class Konzole {
             System.out.println(">> Nedefinovany prikaz");
         }
     }
+    /**
+     * metoda pro start konzole
+     */
 
     public void start(){
         wm.nacistMapu();
         inicializace();
-        System.out.println("Pro přehled příkazů napište: 'prikazy'");
+        System.out.println("Vítejte ve hře Ztracený Hraničáč :-D");
+        System.out.println("Pro přehled příkazů napište: prikazy");
         try{
             resetSouboru();
             do{
@@ -52,7 +62,9 @@ public class Konzole {
             System.out.println(e.getMessage());
         }
     }
-
+    /**
+     * metoda pro ulozeni prikazu do textoveho souboru
+     */
     private void ulozPrikaz(String prikaz){
         try(BufferedWriter bw = new BufferedWriter(new FileWriter(souborPrikazu,true))){
             bw.write(prikaz);
@@ -61,7 +73,9 @@ public class Konzole {
 
         }
     }
-
+    /**
+     * metoda pro reset textoveho souboru
+     */
     private void resetSouboru(){
         try(BufferedWriter bw = new BufferedWriter(new FileWriter(souborPrikazu,false))){
         }catch(Exception e){

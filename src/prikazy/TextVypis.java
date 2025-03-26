@@ -8,6 +8,9 @@ import java.io.IOException;
 
 public class TextVypis extends  Command{
     WorldMap wm = new WorldMap();
+    /**
+     * metoda pro spusteni metody na vypis podle aktualni lokace
+     */
     @Override
     public String execute() {
 
@@ -23,6 +26,12 @@ public class TextVypis extends  Command{
             case 2:
                 text2();
             break;
+            case 3:
+                System.out.println("Pro tuto lokaci žádný příběh neni");
+                break;
+            case 4:
+                System.out.println("Pro tuto lokaci žádný příběh neni ");
+                break;
             case 5:
                 text5();
             break;
@@ -38,6 +47,9 @@ public class TextVypis extends  Command{
 
         return "";
     }
+    /**
+     * metoda pro nacteni nulteho textoveho souboru
+     */
     public void text0() {
         try (BufferedReader br = new BufferedReader(new FileReader("text0.txt"))) {
             String line;
@@ -51,6 +63,9 @@ public class TextVypis extends  Command{
         }
 
     }
+    /**
+     * metoda pro nacteni prvniho textoveho souboru
+     */
     public void text1() {
         try (BufferedReader br = new BufferedReader(new FileReader("text1.txt"))) {
             String line;
@@ -64,6 +79,9 @@ public class TextVypis extends  Command{
         }
 
     }
+    /**
+     * metoda pro nacteni druheho textoveho souboru
+     */
     public void text2() {
         try (BufferedReader br = new BufferedReader(new FileReader("text2.txt"))) {
             String line;
@@ -77,6 +95,9 @@ public class TextVypis extends  Command{
         }
 
     }
+    /**
+     * metoda pro nacteni pateho textoveho souboru
+     */
     public void text5() {
         try (BufferedReader br = new BufferedReader(new FileReader("text5.txt"))) {
             String line;
@@ -90,6 +111,9 @@ public class TextVypis extends  Command{
         }
 
     }
+    /**
+     * metoda pro nacteni sesteho textoveho souboru
+     */
     public void text6() {
         try (BufferedReader br = new BufferedReader(new FileReader("text6.txt"))) {
             String line;
@@ -103,6 +127,9 @@ public class TextVypis extends  Command{
         }
 
     }
+    /**
+     * metoda pro nacteni sedmeho textoveho souboru
+     */
     public void text7() {
         try (BufferedReader br = new BufferedReader(new FileReader("text7.txt"))) {
             String line;
@@ -116,7 +143,9 @@ public class TextVypis extends  Command{
         }
 
     }
-
+    /**
+     * metoda pro zjisteni zda program konci
+     */
     @Override
     public boolean exit() {
         return false;

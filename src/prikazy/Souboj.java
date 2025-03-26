@@ -17,6 +17,9 @@ public class Souboj extends Command {
     public ArrayList<Predmet> getVyhra() {
         return vyhra;
     }
+    /**
+     * metoda na souboj s monstry a final bossem
+     */
     Random rd = new Random();
     @Override
     public String execute() {
@@ -41,7 +44,7 @@ public class Souboj extends Command {
                         System.out.println(monstrum.getJmeno() + ", Hp: " + monstrum.getZivoty() + ", Síla: " + monstrum.getSila());
                         System.out.println("Hráč, Hp: " + Hrac.getZivoty() + ", Síla: " + Hrac.getSila());
                         monstrum.setZivoty(monstrum.getZivoty() - Hrac.getSila());
-                        if (monstrum.getZivoty() <= 0) {
+                        if (monstrum.getZivoty() <= 0&& Hrac.getZivoty() > 0) {
                             System.out.println("Vyhrál jsi");
                             b.getBatoh().add(monstrum.getMonstra1().get(rd.nextInt(4)));
                             System.out.println(b.getBatoh());
@@ -61,7 +64,7 @@ public class Souboj extends Command {
                         System.out.println(monstrum2.getJmeno() + ", Hp: " + monstrum2.getZivoty() + ", Síla: " + monstrum2.getSila());
                         System.out.println("Hráč, Hp: " + Hrac.getZivoty() + ", Síla: " + Hrac.getSila());
                         monstrum2.setZivoty(monstrum2.getZivoty() - Hrac.getSila());
-                        if (monstrum2.getZivoty() <= 0) {
+                        if (monstrum2.getZivoty() <= 0&& Hrac.getZivoty() > 0) {
                             System.out.println("Vyhrál jsi");
                             b.getBatoh().add(monstrum2.getMonstra2().get(rd.nextInt(4)));
                             System.out.println(b.getBatoh());
@@ -82,7 +85,7 @@ public class Souboj extends Command {
                         System.out.println("Hráč, Hp: " + Hrac.getZivoty() + ", Síla: " + Hrac.getSila());
                         monstrum3.setZivoty(monstrum3.getZivoty() - Hrac.getSila());
 
-                        if (monstrum3.getZivoty() <= 0) {
+                        if (monstrum3.getZivoty() <= 0&& Hrac.getZivoty() > 0) {
                             System.out.println("Vyhrál jsi");
                             b.getBatoh().add(monstrum3.getMonstra3().get(rd.nextInt(4)));
                             System.out.println(b.getBatoh());
@@ -111,7 +114,7 @@ public class Souboj extends Command {
                             switch (odpoved){
                                 case "ano":
                                     for (int i = 0; i <b.getBatoh().size() ; i++) {
-                                        if(b.getBatoh().get(i).getNazev().equals("heal")){
+                                        if(b.getBatoh().get(i).getNazev().equals("heal")||b.getBatoh().get(i).getNazev().equals("healm")) {
                                             Hrac.setZivoty(Hrac.getZivoty() + b.getBatoh().get(i).getHeal());
                                             b.getBatoh().remove(i);
                                             break;
@@ -129,7 +132,7 @@ public class Souboj extends Command {
                         System.out.println(monstrum4.getJmeno() + ", Hp: " + monstrum4.getZivoty() + ", Síla: " + monstrum4.getSila());
                         System.out.println("Hráč, Hp: " + Hrac.getZivoty() + ", Síla: " + Hrac.getSila());
                         monstrum4.setZivoty(monstrum4.getZivoty() - Hrac.getSila());
-                        if (monstrum4.getZivoty() <= 0) {
+                        if (monstrum4.getZivoty() <= 0 && Hrac.getZivoty() > 0) {
                             System.out.println("Vyhrál jsi");
                             System.out.println("Porazil draka a vyhrál hru"); // možná přidání hlavy draka do inventáře a potom s ní dojít za ondriganem a pochlubit se mu
                         }
@@ -151,7 +154,9 @@ public class Souboj extends Command {
         return "";
     }
 
-
+    /**
+     * metoda na zjisteni zda program konci
+     */
     @Override
     public boolean exit() {
         return jeMrtvy;

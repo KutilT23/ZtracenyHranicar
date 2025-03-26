@@ -19,7 +19,9 @@ public class Interakce extends Command {
     private boolean maVlkodlacikrev = false;
     private boolean maSirenimelodie = false;
     private boolean maSirenislzy = false;
-
+    /**
+     * metoda na interakci s vesnicany pouzitim switch
+     */
     @Override
     public String execute() {
         WorldMap wm = new WorldMap();
@@ -156,7 +158,9 @@ public class Interakce extends Command {
     public void setNahoda(int nahoda) {
         this.nahoda = nahoda;
     }
-
+    /**
+     * metoda na zjisteni zda program konci
+     */
     @Override
     public boolean exit() {
         return false;
