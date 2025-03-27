@@ -5,8 +5,9 @@ import dalsi.Monstrum;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-import world.Konzole;
-import world.Location;
+
+import world.Command;
+import dalsi.Predmet;
 import world.WorldMap;
 
 public class Souboj extends Command {

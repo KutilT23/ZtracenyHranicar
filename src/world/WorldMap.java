@@ -17,7 +17,7 @@ public class WorldMap {
      * metoda pro nacteni mapy sveta z textoveho souboru
      */
     public boolean nacistMapu() {
-        try (BufferedReader br = new BufferedReader(new FileReader("mapa.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/TextSoubory/mapa.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] lines = line.split(";");
@@ -77,14 +77,14 @@ public class WorldMap {
 
         int newPosition = world.get(currentPosition).getLocations()[dirIndex];
         if (newPosition == -1) {
-            return "Tímto směrem nelze jít.";
+            return "Tímto směrem nelze jít⛔.";
         } else {
-            if(currentPosition == 0&&maMapu==false&&smer.equals("jih")) {
-                return "Tímto směrem nelze jít bez mapy";
+            if(currentPosition == 0&&maMapu==false&&smer.equals("j")) {
+                return "Tímto směrem nelze jít bez mapy❌\uD83D\uDDFA\uFE0F ";
             }
             currentPosition = newPosition;
 
-            return "Přesunuli jste se na lokaci:  " + world.get(currentPosition).getName();
+            return "Přesunuli jste se na lokaci\uD83D\uDCCD\uD83D\uDDFA\uFE0F:  " + world.get(currentPosition).getName();
         }
 
 

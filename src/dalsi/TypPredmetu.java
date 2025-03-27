@@ -1,4 +1,4 @@
-package prikazy;
+package dalsi;
 
 public enum TypPredmetu {
     ZBRAN,LEKTVARHEAL

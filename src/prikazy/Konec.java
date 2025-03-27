@@ -1,4 +1,7 @@
 package prikazy;
+
+import world.Command;
+
 public class Konec extends Command {
     /**
      * metoda pro vypsani konce hry

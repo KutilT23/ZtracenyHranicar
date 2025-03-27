@@ -1,8 +1,10 @@
 package prikazy;
 
+import dalsi.Shop;
+import world.Command;
 import world.WorldMap;
 
-public class Nakup extends Command{
+public class Nakup extends Command {
     /**
      *  spusteni metod na pridani predmetu do shopu a jejich nasledný nakup
      */

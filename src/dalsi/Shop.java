@@ -1,6 +1,6 @@
-package prikazy;
+package dalsi;
 
-import dalsi.Hrac;
+import prikazy.Batoh;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -16,7 +16,7 @@ public class Shop {
      */
     public void pridatVeci(){
         shop.clear();
-        shop.add(new Predmet("sekyra",8,TypPredmetu.ZBRAN,4));
+        shop.add(new Predmet("sekyra",8, TypPredmetu.ZBRAN,4));
         shop.add(new Predmet("mec",10,TypPredmetu.ZBRAN,5));
         shop.add(new Predmet("kladivo",6,TypPredmetu.ZBRAN,3));
         shop.add(new Predmet("lopata",4,TypPredmetu.ZBRAN,2));

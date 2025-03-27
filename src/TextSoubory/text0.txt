@@ -1,4 +1,4 @@
-Úvod: Jste hraničář, který se právě probral z němoty poté, co se ožral v Hostinci u dvou Trollů.
+Úvod: Jste hraničář, který se právě probral z němoty poté, co se opil v Hostinci u dvou Trollů.
       Jste na dně, život pro vás nemá smysl, a proto jste celou noc zapíjel deprese medovinou.
       Když tu najednou slyšíte z rohu místnosti, jak spolu tiše mluví dva elfové.
       Nepozorovaně se přiblížíte k jejich stolu a zaposloucháte se do jejich konverzace.
@@ -9,5 +9,5 @@
       Jenom pravý válečník tyto věci zvládne a nezemře.
       Hned jakmile sis uvědomili, že se jedná o nekonečnou slávu pro člověka, který draka skolí, a nezměrně velké bohatství,
       které můžete mít, nečekali jste ani vteřinu, vyskočili jste ze židle a běželi ke dveřím od hostince.
-      Tímto tvůj příběh začíná...
-      Hodně štěstí.
+      Tímto tvůj příběh začíná...Hodně štěstí.
+      Použitelné příkazy: pohyb, pribeh, batoh, konec, prikazy

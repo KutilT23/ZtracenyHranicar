@@ -1,4 +1,4 @@
-package prikazy;
+package world;
 public abstract class Command {
     protected String prikaz;
     public void setPrikaz(String prikaz){

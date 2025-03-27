@@ -1,12 +1,13 @@
 package prikazy;
 
+import world.Command;
 import world.WorldMap;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class TextVypis extends  Command{
+public class TextVypis extends Command {
     WorldMap wm = new WorldMap();
     /**
      * metoda pro spusteni metody na vypis podle aktualni lokace
@@ -51,7 +52,7 @@ public class TextVypis extends  Command{
      * metoda pro nacteni nulteho textoveho souboru
      */
     public void text0() {
-        try (BufferedReader br = new BufferedReader(new FileReader("text0.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/TextSoubory/text0.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 System.out.println(line);
@@ -67,7 +68,7 @@ public class TextVypis extends  Command{
      * metoda pro nacteni prvniho textoveho souboru
      */
     public void text1() {
-        try (BufferedReader br = new BufferedReader(new FileReader("text1.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/TextSoubory/text1.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 System.out.println(line);
@@ -83,7 +84,7 @@ public class TextVypis extends  Command{
      * metoda pro nacteni druheho textoveho souboru
      */
     public void text2() {
-        try (BufferedReader br = new BufferedReader(new FileReader("text2.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/TextSoubory/text2.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 System.out.println(line);
@@ -99,7 +100,7 @@ public class TextVypis extends  Command{
      * metoda pro nacteni pateho textoveho souboru
      */
     public void text5() {
-        try (BufferedReader br = new BufferedReader(new FileReader("text5.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/TextSoubory/text5.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 System.out.println(line);
@@ -115,7 +116,7 @@ public class TextVypis extends  Command{
      * metoda pro nacteni sesteho textoveho souboru
      */
     public void text6() {
-        try (BufferedReader br = new BufferedReader(new FileReader("text6.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/TextSoubory/text6.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 System.out.println(line);
@@ -131,7 +132,7 @@ public class TextVypis extends  Command{
      * metoda pro nacteni sedmeho textoveho souboru
      */
     public void text7() {
-        try (BufferedReader br = new BufferedReader(new FileReader("text7.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("src/TextSoubory/text7.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 System.out.println(line);

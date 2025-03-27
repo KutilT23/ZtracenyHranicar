@@ -1,6 +1,8 @@
-package prikazy;
+package Testy;
 
 import org.junit.jupiter.api.Test;
+import dalsi.Predmet;
+import dalsi.TypPredmetu;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -22,7 +24,7 @@ class PredmetTest {
 
     @Test
     void getSila() {
-        Predmet p = new Predmet("mec",2,TypPredmetu.ZBRAN);
+        Predmet p = new Predmet("mec",2, TypPredmetu.ZBRAN);
         assertEquals(2,p.getSila());
     }
 

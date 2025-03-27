@@ -1,6 +1,7 @@
-package prikazy;
+package Testy;
 
 import org.junit.jupiter.api.Test;
+import dalsi.Shop;
 
 import static org.junit.jupiter.api.Assertions.*;
 

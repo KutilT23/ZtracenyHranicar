@@ -1,4 +1,4 @@
-package prikazy;
+package dalsi;
 
 public class Predmet {
     private String nazev;

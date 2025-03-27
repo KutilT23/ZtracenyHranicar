@@ -1,6 +1,8 @@
 package prikazy;
 
 import dalsi.Hrac;
+import world.Command;
+import dalsi.Predmet;
 import world.WorldMap;
 
 import java.util.Random;

@@ -1,8 +1,10 @@
 package prikazy;
 
+import dalsi.Shop;
+import world.Command;
 import world.WorldMap;
 
-public class Prodat extends Command{
+public class Prodat extends Command {
     /**
      * metoda na spusteni metody na prodej
      */

@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Konzole {
     private boolean exit = false;
     private HashMap<String, Command> mapa = new HashMap<>();
-    public static String souborPrikazu = "souborPrikazu.txt";
+    public static String souborPrikazu = "src/TextSoubory/souborPrikazu.txt";
     WorldMap wm = new WorldMap();
     /**
      * metoda pro pridani prikazu do hashmapy
@@ -32,7 +32,7 @@ public class Konzole {
      * metoda pro provedeni prikazu
      */
     private void proved(){
-        System.out.println("Napište co chcete dělat");
+        System.out.println("NAPIŠTE CO CHCETE DĚLAT\uD83E\uDD14:");
         String prikaz = scanner.nextLine();
         prikaz = prikaz.trim();
         prikaz = prikaz.toLowerCase();

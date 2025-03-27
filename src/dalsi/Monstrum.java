@@ -1,8 +1,6 @@
 package dalsi;
 
 
-import prikazy.Predmet;
-
 import java.util.ArrayList;
 
 public class Monstrum {

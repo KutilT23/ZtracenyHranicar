@@ -1,6 +1,9 @@
 package prikazy;
 
 import dalsi.Hrac;
+import dalsi.TypPredmetu;
+import world.Command;
+import dalsi.Predmet;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -20,6 +23,11 @@ public class Batoh extends Command {
      * metoda na použití předmětu v batohu - přidá předmět do listu ruka
      */
     public void pouziti(){
+        if(batoh.isEmpty()){
+            System.out.println("Není co použít");
+        }else{
+
+
         boolean predmetNalezen = false;
         System.out.println();
         System.out.println(getBatoh());
@@ -69,20 +77,21 @@ public class Batoh extends Command {
         if(!predmetNalezen){
             System.out.println("Předmět nenalezen/nelze použít");
         }
+        }
     }
     /**
      * metoda na spusteni metod v batohu
      */
     @Override
     public String execute() {
-        System.out.println("Co chcete udělat: \n1: Prohlédnout si batoh\n2: Použít předmět z batohu");
+        System.out.println("Co chcete udělat: \n1: Prohlédnout si batoh\uD83C\uDF92:\n2: Použít předmět z batohu\uD83E\uDE93❤\uFE0F");
         Scanner sc = new Scanner(System.in);
         String odpoved = sc.next();
 
         switch (odpoved){
             case "1":
-                System.out.println("Batoh: " + getBatoh());
-                System.out.println("Ruka: " + getRuka());
+                System.out.println("Batoh\uD83C\uDF92: " + getBatoh());
+                System.out.println("Ruka✋: " + getRuka());
                 break;
             case "2":
                 pouziti();

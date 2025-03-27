@@ -1,6 +1,7 @@
-package world;
+package Testy;
 
 import org.junit.jupiter.api.Test;
+import world.WorldMap;
 
 import static org.junit.jupiter.api.Assertions.*;
 
