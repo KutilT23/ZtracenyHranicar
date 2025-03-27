@@ -16,17 +16,17 @@ public class TextVypis extends Command {
     public String execute() {
 
         int aktualniPozice = wm.getCurrentPosition();
-        System.out.println("Aktuální pozice: " + aktualniPozice);
+
         switch (aktualniPozice){
             case 0:
                 text0();
-            break;
+                break;
             case 1:
                 text1();
-            break;
+                break;
             case 2:
                 text2();
-            break;
+                break;
             case 3:
                 System.out.println("Pro tuto lokaci žádný příběh neni");
                 break;
@@ -35,13 +35,13 @@ public class TextVypis extends Command {
                 break;
             case 5:
                 text5();
-            break;
+                break;
             case 6:
                 text6();
-            break;
+                break;
             case 7:
                 text7();
-            break;
+                break;
             default:
                 return "chyba při načítání";
         }

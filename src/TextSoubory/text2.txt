@@ -8,4 +8,5 @@ zbraně s magickou mocí… a možná i něco víc.
 Ale drak ještě nikdy nepadl. A tak zůstává Hora věčného souboje místem,
 kam se nikdo neodváží a když už jo, málokdo se vrátí živ a bez úspěchu.
 Dokážeš draka porazit a stát se legendou?
-Použitelné příkazy: souboj, batoh, pohyb, konec, prikazy, pribeh,
+
+Použitelné příkazy: souboj, batoh, pohyb, konec, prikazy, pribeh

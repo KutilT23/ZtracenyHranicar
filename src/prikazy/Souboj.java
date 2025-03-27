@@ -30,17 +30,16 @@ public class Souboj extends Command {
         WorldMap wm = new WorldMap();
 
         int aktualniPozice = wm.getCurrentPosition();
-        System.out.println("Aktuální pozice: " + aktualniPozice);
 
 
         if (aktualniPozice == 5 || aktualniPozice == 6 || aktualniPozice == 7 || aktualniPozice == 2) {
-            System.out.println("Jsi na lokaci s monstry: " + aktualniPozice);
+            System.out.println("Jsi na lokaci s monstry: " + wm.getCurrentPosition1().getName());
 
             switch (aktualniPozice) {
                 case 5:
                     Monstrum monstrum = new Monstrum("Pavouk", 3, 50); //trhlina
                     monstrum.pridaniLoot();
-                    System.out.println("Jsi v souboji s  " + monstrum);
+                    System.out.println("Jsi v souboji s  " + monstrum + "\uD83D\uDD77\uFE0F");
                     while (Hrac.getZivoty() > 0 && monstrum.getZivoty() > 0) {
                         System.out.println(monstrum.getJmeno() + ", Hp: " + monstrum.getZivoty() + ", Síla: " + monstrum.getSila());
                         System.out.println("Hráč, Hp: " + Hrac.getZivoty() + ", Síla: " + Hrac.getSila());
@@ -60,12 +59,12 @@ public class Souboj extends Command {
                 case 6:
                     Monstrum monstrum2 = new Monstrum("Vlkodlak", 6, 100); //les
                     monstrum2.pridaniLoot2();
-                    System.out.println("Jsi v souboji s  " + monstrum2);
+                    System.out.println("Jsi v souboji s  " + monstrum2 + "\uD83D\uDC3A\uD83C\uDF15");
                     while (Hrac.getZivoty() > 0 && monstrum2.getZivoty() > 0) {
                         System.out.println(monstrum2.getJmeno() + ", Hp: " + monstrum2.getZivoty() + ", Síla: " + monstrum2.getSila());
                         System.out.println("Hráč, Hp: " + Hrac.getZivoty() + ", Síla: " + Hrac.getSila());
                         monstrum2.setZivoty(monstrum2.getZivoty() - Hrac.getSila());
-                        if (monstrum2.getZivoty() <= 0&& Hrac.getZivoty() > 0) {
+                        if (monstrum2.getZivoty() <= 0 && Hrac.getZivoty() > 0) {
                             System.out.println("Vyhrál jsi");
                             b.getBatoh().add(monstrum2.getMonstra2().get(rd.nextInt(4)));
                             System.out.println(b.getBatoh());
@@ -80,7 +79,7 @@ public class Souboj extends Command {
                 case 7:
                     Monstrum monstrum3 = new Monstrum("Sirena", 10, 80); //jezero    bonusovy souboj
                     monstrum3.pridaniLoot3();
-                    System.out.println("Jsi v souboji s  " + monstrum3);
+                    System.out.println("Jsi v souboji s  " + monstrum3 + "\uD83E\uDDDC\uD83C\uDFFB\u200D♀\uFE0F");
                     while (Hrac.getZivoty() > 0 && monstrum3.getZivoty() > 0) {
                         System.out.println(monstrum3.getJmeno() + ", Hp: " + monstrum3.getZivoty() + ", Síla: " + monstrum3.getSila());
                         System.out.println("Hráč, Hp: " + Hrac.getZivoty() + ", Síla: " + Hrac.getSila());
@@ -100,7 +99,7 @@ public class Souboj extends Command {
                     break;
                 case 2:
                     Monstrum monstrum4 = new Monstrum("Drak", 10, 150); //trhlina
-                    System.out.println("Jsi v souboji s  " + monstrum4);
+                    System.out.println("Jsi v souboji s  " + monstrum4 + "\uD83D\uDD25\uD83D\uDC32");
                     while (Hrac.getZivoty() > 0 && monstrum4.getZivoty() > 0) {
                         System.out.println(monstrum4.getJmeno() + ", Hp: " + monstrum4.getZivoty() + ", Síla: " + monstrum4.getSila());
                         System.out.println("Hráč, Hp: " + Hrac.getZivoty() + ", Síla: " + Hrac.getSila());

@@ -19,4 +19,4 @@ A tak se raději městu lidé vyhýbají. Neboť kdo jednou spatří Trhlinu zap
 Jen občas se objeví osamělý poutník, bloudící po lesích,
  věřící si natolik, že do tohoto ohavného místa vstupí a už se nikdy nevrátí.
 
- Použitelné příkazy: souboj, batoh, pohyb, konec, prikazy, pribeh,
+ Použitelné příkazy: souboj, batoh, pohyb, konec, prikazy, pribeh

@@ -84,7 +84,7 @@ public class WorldMap {
             }
             currentPosition = newPosition;
 
-            return "Přesunuli jste se na lokaci\uD83D\uDCCD\uD83D\uDDFA\uFE0F:  " + world.get(currentPosition).getName();
+            return "Přesunuli jste se na lokaci\uD83D\uDCCD\uD83D\uDDFA\uFE0F:  " + world.get(currentPosition).getName().toUpperCase();
         }
 
 

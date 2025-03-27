@@ -12,7 +12,7 @@ public class Prodat extends Command {
     public String execute() {
         WorldMap wm = new WorldMap();
         int aktualniPozice = wm.getCurrentPosition();
-        //System.out.println("Aktuální pozice: " + aktualniPozice);
+
 
         if(aktualniPozice==1){
             Shop shop = new Shop();

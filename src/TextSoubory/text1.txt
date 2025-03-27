@@ -9,3 +9,7 @@ Můžeš tu mluvit s obchodníky, nakupovat zásoby, prodávat cennosti z cest.
 
 Zde se můžeš zastavit, odpočinout si a připravit se na další dobrodružství.
 Ale pamatuj – i když je vesnice bezpečná, svět za jejími branami na tebe stále čeká.
+
+Zde se hráč snaží najít vesničana Ondriga a přimout od něj 3 questy k získání mapy
+
+Použitelné příkazy: interakce, prodat, nakup, batoh, pohyb, konec, prikazy, pribeh

@@ -53,6 +53,7 @@ public class Konzole {
         inicializace();
         System.out.println("Vítejte ve hře Ztracený Hraničáč :-D");
         System.out.println("Pro přehled příkazů napište: prikazy");
+        System.out.println("Nacházíš se na lokaci\uD83D\uDCCD\uD83D\uDDFA\uFE0F: " + wm.getCurrentPosition1().getName().toUpperCase());
         try{
             resetSouboru();
             do{

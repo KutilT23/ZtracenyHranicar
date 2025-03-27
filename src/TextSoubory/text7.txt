@@ -8,3 +8,5 @@ Uprostřed hustých lesů a mlžných údolí leží Jezero Tisíce Odrazů – 
 Toto jezero je domovem sirén. Nebývají takové, jaké popisují staré legendy – nejsou
 jen krásné ženy s rybími ocasy. Jejich podoby se mění jako samotná hladina jezera.
 Někdy se zdají být půvabné a křehké, jindy mají prázdné oči, zčernalé dásně a nehty ostré jako jehly.
+
+Použitelné příkazy: souboj, batoh, pohyb, konec, prikazy, pribeh
