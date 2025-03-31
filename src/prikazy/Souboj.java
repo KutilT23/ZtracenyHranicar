@@ -44,14 +44,16 @@ public class Souboj extends Command {
                         System.out.println(monstrum.getJmeno() + ", Hp: " + monstrum.getZivoty() + ", Síla: " + monstrum.getSila());
                         System.out.println("Hráč, Hp: " + Hrac.getZivoty() + ", Síla: " + Hrac.getSila());
                         monstrum.setZivoty(monstrum.getZivoty() - Hrac.getSila());
-                        if (monstrum.getZivoty() <= 0&& Hrac.getZivoty() > 0) {
-                            System.out.println("Vyhrál jsi");
-                            b.getBatoh().add(monstrum.getMonstra1().get(rd.nextInt(4)));
-                            System.out.println(b.getBatoh());
-                        }
                         Hrac.setZivoty(Hrac.getZivoty() - monstrum.getSila());
+                        if (monstrum.getZivoty() <= 0&& Hrac.getZivoty() > 0) {
+                            System.out.println("Vyhrál jsi \n" +"Tvoje životy: " + Hrac.getZivoty());
+                            b.getBatoh().add(monstrum.getMonstra1().get(rd.nextInt(4)));
+                            System.out.println("Tvoje odměna:"+  b.getBatoh().getLast());
+                        }
+
                         if (Hrac.getZivoty() <= 0) {
-                            System.out.println("Zemřel jsi");
+                            Hrac.setZivoty(0);
+                            System.out.println("Zemřel jsi\n" +"Tvoje životy: " + Hrac.getZivoty());
                             jeMrtvy = true;
                         }
                     }

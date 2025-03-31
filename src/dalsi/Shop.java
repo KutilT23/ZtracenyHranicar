@@ -35,8 +35,8 @@ public class Shop {
         if(Hrac.getPenize()==0){
             System.out.println("Nemáš peníze");
         }else{
-            System.out.println("Vítej v mém obchodě Hraničáři, co si chceš koupit? " + "\n sekyra: Síla-8, Cena-4 \n mec: Síla-10, Cena-5 \n kladivo: Síla-6, Cena-3 \n lopata: Síla-4, Cena-2\n dyka: Síla-2, Cena-1 \n heal Efekt-50Hp+, Cena-2 \n healm Efekt-25Hp+, Cena-1 ");
-            System.out.println("Počet tvých zlaťáků: " + Hrac.getPenize());
+            System.out.println("Vítej v mém obchodě Hraničáři, co si chceš koupit?\uD83D\uDED2 " + "\n sekyra: Síla-8, Cena-4 \n mec: Síla-10, Cena-5 \n kladivo: Síla-6, Cena-3 \n lopata: Síla-4, Cena-2\n dyka: Síla-2, Cena-1 \n heal Efekt-50Hp+, Cena-2 \n healm Efekt-25Hp+, Cena-1 ");
+            System.out.println("Počet tvých zlaťáků\uD83D\uDFE1: " + Hrac.getPenize());
             Scanner sc = new Scanner(System.in);
             String odpoved = sc.next();
             odpoved = odpoved.toLowerCase();
@@ -47,7 +47,7 @@ public class Shop {
                         Hrac.setPenize(Hrac.getPenize()-shop.get(i).getCena());
                         b.getBatoh().add(shop.get(i));
                         System.out.println("Úspěšně nakoupeno "+ shop.get(i).getNazev());
-                        System.out.println("Zbývající peníze: " + Hrac.getPenize());
+                        System.out.println("Zbývající peníze\uD83D\uDFE1: " + Hrac.getPenize());
                     }else{
                         System.out.println("Nemáš dostatek zlaťáků");
                     }
@@ -74,9 +74,9 @@ public class Shop {
             System.out.println("V batohu nic není");
         }else{
 
-            System.out.println("Vítej v mém krámku Hraničáři, zde můžeš prodat vše co vlastníš");
-            System.out.println("Obsah tvého batohu: " + b.getBatoh());
-            System.out.println("Počet tvých zlaťáků: " + Hrac.getPenize());
+            System.out.println("Vítej v mém krámku Hraničáři, zde můžeš prodat vše co vlastníš\uD83D\uDCB0");
+            System.out.println("Obsah tvého batohu\uD83C\uDF92: " + b.getBatoh());
+            System.out.println("Počet tvých zlaťáků\uD83D\uDFE1: " + Hrac.getPenize());
             Scanner sc = new Scanner(System.in);
             String prodani = sc.next();
             prodani = prodani.toLowerCase();
@@ -97,7 +97,7 @@ public class Shop {
                     b.getBatoh().remove(i);
 
                     System.out.println("Úspěšně prodáno :)");
-                    return"Batoh:" + b.getBatoh() +"\nRuka:" + b.getRuka() + " \nPočet tvých zlaťáků: " + Hrac.getPenize();
+                    return"Batoh:" + b.getBatoh() +"\nRuka:" + b.getRuka() + " \nPočet tvých zlaťáků\uD83D\uDFE1: " + Hrac.getPenize();
                 }
 
             }

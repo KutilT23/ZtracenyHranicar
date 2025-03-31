@@ -13,6 +13,7 @@ public class Pohyb extends Command {
     private Scanner sc = new Scanner(System.in);
     /**
      * metoda na spusteni metody na pohyb
+     *
      */
     @Override
     public String execute() {
