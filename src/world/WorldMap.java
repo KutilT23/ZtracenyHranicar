@@ -79,7 +79,7 @@ public class WorldMap {
         if (newPosition == -1) {
             return "Tímto směrem nelze jít⛔.";
         } else {
-            if(currentPosition == 0&&maMapu==false&&smer.equals("j")) {
+            if(currentPosition == 0&&!maMapu&&smer.equals("j")) {
                 return "Tímto směrem nelze jít bez mapy❌\uD83D\uDDFA\uFE0F ";
             }
             currentPosition = newPosition;

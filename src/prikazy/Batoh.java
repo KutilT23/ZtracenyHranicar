@@ -50,13 +50,14 @@ public class Batoh extends Command {
                     Hrac.setZivoty(Hrac.getZivoty()+ruka.get(0).getHeal());
                     getBatoh().remove(i);
                     ruka.clear();
+                    System.out.println("Nezapomeň si zase dát do ruky zbraň pokud si ji měl");
                     if(Hrac.getZivoty()>100){
                         Hrac.setZivoty(100);
                     }
 
-                    System.out.println(Hrac.getZivoty());
-
                     System.out.println("Batoh:" + getBatoh());
+                    System.out.println("Nezapomeň si zase dát do ruky zbraň pokud si ji měl");
+                    System.out.println("Tvoje životy: " + Hrac.getZivoty());
                     predmetNalezen = true;
                     break;
                 }

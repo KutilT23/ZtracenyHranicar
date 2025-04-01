@@ -8,7 +8,7 @@ public class Konec extends Command {
      */
     @Override
     public String execute() {
-        return "Hra končí...";
+        return "Hra končí\uD83C\uDFC1...";
     }
     /**
      * metoda na zjisteni zda program konci

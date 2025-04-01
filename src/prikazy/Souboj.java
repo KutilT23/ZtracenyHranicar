@@ -13,6 +13,7 @@ import world.WorldMap;
 public class Souboj extends Command {
     ArrayList<Predmet>vyhra = new ArrayList<>();
     private boolean jeMrtvy = false;
+    private boolean drakMrtev = false;
 
 
     public ArrayList<Predmet> getVyhra() {
@@ -26,6 +27,7 @@ public class Souboj extends Command {
     public String execute() {
         Scanner sc = new Scanner(System.in);
         Batoh b = new Batoh();
+
 
         WorldMap wm = new WorldMap();
 
@@ -50,7 +52,6 @@ public class Souboj extends Command {
                             b.getBatoh().add(monstrum.getMonstra1().get(rd.nextInt(4)));
                             System.out.println("Tvoje odměna:"+  b.getBatoh().getLast());
                         }
-
                         if (Hrac.getZivoty() <= 0) {
                             Hrac.setZivoty(0);
                             System.out.println("Zemřel jsi\n" +"Tvoje životy: " + Hrac.getZivoty());
@@ -66,14 +67,15 @@ public class Souboj extends Command {
                         System.out.println(monstrum2.getJmeno() + ", Hp: " + monstrum2.getZivoty() + ", Síla: " + monstrum2.getSila());
                         System.out.println("Hráč, Hp: " + Hrac.getZivoty() + ", Síla: " + Hrac.getSila());
                         monstrum2.setZivoty(monstrum2.getZivoty() - Hrac.getSila());
-                        if (monstrum2.getZivoty() <= 0 && Hrac.getZivoty() > 0) {
-                            System.out.println("Vyhrál jsi");
-                            b.getBatoh().add(monstrum2.getMonstra2().get(rd.nextInt(4)));
-                            System.out.println(b.getBatoh());
-                        }
                         Hrac.setZivoty(Hrac.getZivoty() - monstrum2.getSila());
+                        if (monstrum2.getZivoty() <= 0&& Hrac.getZivoty() > 0) {
+                            System.out.println("Vyhrál jsi \n" +"Tvoje životy: " + Hrac.getZivoty());
+                            b.getBatoh().add(monstrum2.getMonstra2().get(rd.nextInt(4)));
+                            System.out.println("Tvoje odměna:"+  b.getBatoh().getLast());
+                        }
                         if (Hrac.getZivoty() <= 0) {
-                            System.out.println("Zemřel jsi");
+                            Hrac.setZivoty(0);
+                            System.out.println("Zemřel jsi\n" +"Tvoje životy: " + Hrac.getZivoty());
                             jeMrtvy = true;
                         }
                     }
@@ -86,64 +88,70 @@ public class Souboj extends Command {
                         System.out.println(monstrum3.getJmeno() + ", Hp: " + monstrum3.getZivoty() + ", Síla: " + monstrum3.getSila());
                         System.out.println("Hráč, Hp: " + Hrac.getZivoty() + ", Síla: " + Hrac.getSila());
                         monstrum3.setZivoty(monstrum3.getZivoty() - Hrac.getSila());
-
-                        if (monstrum3.getZivoty() <= 0&& Hrac.getZivoty() > 0) {
-                            System.out.println("Vyhrál jsi");
-                            b.getBatoh().add(monstrum3.getMonstra3().get(rd.nextInt(4)));
-                            System.out.println(b.getBatoh());
-                        }
                         Hrac.setZivoty(Hrac.getZivoty() - monstrum3.getSila());
+                        if (monstrum3.getZivoty() <= 0&& Hrac.getZivoty() > 0) {
+                            System.out.println("Vyhrál jsi \n" +"Tvoje životy: " + Hrac.getZivoty());
+                            b.getBatoh().add(monstrum3.getMonstra3().get(rd.nextInt(4)));
+                            System.out.println("Tvoje odměna:"+  b.getBatoh().getLast());
+                        }
                         if (Hrac.getZivoty() <= 0) {
-                            System.out.println("Zemřel jsi");
+                            Hrac.setZivoty(0);
+                            System.out.println("Zemřel jsi\n" +"Tvoje životy: " + Hrac.getZivoty());
                             jeMrtvy = true;
                         }
                     }
                     break;
                 case 2:
-                    Monstrum monstrum4 = new Monstrum("Drak", 10, 150); //trhlina
-                    System.out.println("Jsi v souboji s  " + monstrum4 + "\uD83D\uDD25\uD83D\uDC32");
-                    while (Hrac.getZivoty() > 0 && monstrum4.getZivoty() > 0) {
-                        System.out.println(monstrum4.getJmeno() + ", Hp: " + monstrum4.getZivoty() + ", Síla: " + monstrum4.getSila());
-                        System.out.println("Hráč, Hp: " + Hrac.getZivoty() + ", Síla: " + Hrac.getSila());
-                        if(Hrac.getZivoty() >0&& Hrac.getZivoty()<=20) {
-                            System.out.println("Chcete se vyhealovat?  (ano, ne)");
-                            String odpoved = sc.next();
-                            odpoved = odpoved.toLowerCase();
-                            while (!odpoved.equals("ano")&&!odpoved.equals("ne")) {
-                                odpoved = sc.next();
+                    if(!drakMrtev){
+                        Monstrum monstrum4 = new Monstrum("Drak", 10, 150);
+                        System.out.println("Jsi v souboji s  " + monstrum4 + "\uD83D\uDD25\uD83D\uDC32");
+                        while (Hrac.getZivoty() > 0 && monstrum4.getZivoty() > 0) {
+                            if(Hrac.getZivoty() >0&& Hrac.getZivoty()<=20) {
+                                System.out.println("Chcete se vyhealovat?  (ano, ne)");
+                                String odpoved = sc.next();
                                 odpoved = odpoved.toLowerCase();
-                            }
-                            switch (odpoved){
-                                case "ano":
-                                    for (int i = 0; i <b.getBatoh().size() ; i++) {
-                                        if(b.getBatoh().get(i).getNazev().equals("heal")||b.getBatoh().get(i).getNazev().equals("healm")) {
-                                            Hrac.setZivoty(Hrac.getZivoty() + b.getBatoh().get(i).getHeal());
-                                            b.getBatoh().remove(i);
-                                            break;
+                                while (!odpoved.equals("ano")&&!odpoved.equals("ne")) {
+                                    System.out.println("Špatná odpověď");
+                                    odpoved = sc.next();
+                                    odpoved = odpoved.toLowerCase();
+                                }
+                                switch (odpoved){
+                                    case "ano":
+                                        for (int i = 0; i <b.getBatoh().size() ; i++) {
+                                            if(b.getBatoh().get(i).getNazev().equals("heal")||b.getBatoh().get(i).getNazev().equals("healm")) {
+                                                Hrac.setZivoty(Hrac.getZivoty() + b.getBatoh().get(i).getHeal());
+                                                b.getBatoh().remove(i);
+                                                break;
+                                            }
                                         }
-                                    }
-                                    break;
-                                case "ne":
-                                    System.out.println("Nuže dobrá, tak heal nebude");
-                                    break;
-                                default:
-                                    return "";
-                            }
+                                        break;
+                                    case "ne":
+                                        System.out.println("Nuže dobrá, tak heal nebude");
+                                        break;
+                                    default:
+                                        System.out.println("Špatná odpověď");
+                                }
 
+                            }
+                            System.out.println(monstrum4.getJmeno() + ", Hp: " + monstrum4.getZivoty() + ", Síla: " + monstrum4.getSila());
+                            System.out.println("Hráč, Hp: " + Hrac.getZivoty() + ", Síla: " + Hrac.getSila());
+                            monstrum4.setZivoty(monstrum4.getZivoty() - Hrac.getSila());
+                            Hrac.setZivoty(Hrac.getZivoty() - monstrum4.getSila());
+                            if (monstrum4.getZivoty() <= 0 && Hrac.getZivoty() > 0) {
+                                System.out.println("Vyhrál jsi");
+                                System.out.println("Porazil draka a vyhrál hru");
+                                drakMrtev = true;
+                            }
+                            if (Hrac.getZivoty() <= 0) {
+                                System.out.println("Zemřel jsi na úplném konci\n" +"Tvoje životy: " + Hrac.getZivoty());
+                                jeMrtvy = true;
+                            }
                         }
-                        System.out.println(monstrum4.getJmeno() + ", Hp: " + monstrum4.getZivoty() + ", Síla: " + monstrum4.getSila());
-                        System.out.println("Hráč, Hp: " + Hrac.getZivoty() + ", Síla: " + Hrac.getSila());
-                        monstrum4.setZivoty(monstrum4.getZivoty() - Hrac.getSila());
-                        if (monstrum4.getZivoty() <= 0 && Hrac.getZivoty() > 0) {
-                            System.out.println("Vyhrál jsi");
-                            System.out.println("Porazil draka a vyhrál hru"); // možná přidání hlavy draka do inventáře a potom s ní dojít za ondriganem a pochlubit se mu
-                        }
-                        Hrac.setZivoty(Hrac.getZivoty() - monstrum4.getSila());
-                        if (Hrac.getZivoty() <= 0) {
-                            System.out.println("Zemřel jsi na úplném konci");
-                            jeMrtvy = true;
-                        }
+
+                    }else{
+                        System.out.println("Drak už byl poražen");
                     }
+
 
                     break;
                 default:
