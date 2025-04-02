@@ -7,10 +7,13 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Třída na výpis příběhu
+ */
 public class TextVypis extends Command {
     WorldMap wm = new WorldMap();
     /**
-     * metoda pro spusteni metody na vypis podle aktualni lokace
+     * metoda pro spusteni metody na vypis pribehu podle aktualni lokace
      */
     @Override
     public String execute() {

@@ -8,6 +8,9 @@ import world.WorldMap;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * Třída na jakoby interakci s vesničany
+ */
 public class Interakce extends Command {
     private int nahoda;
     private boolean nalezen = false;

@@ -14,7 +14,7 @@ public class WorldMap {
     private static int currentPosition = start;
     public static boolean maMapu = false;
     /**
-     * metoda pro nacteni mapy sveta z textoveho souboru
+     * metoda pro nacteni mapy sveta z textoveho souboru, inspirovano prací z moodle
      */
     public boolean nacistMapu() {
         try (BufferedReader br = new BufferedReader(new FileReader("src/TextSoubory/mapa.txt"))) {
@@ -52,7 +52,7 @@ public class WorldMap {
 
 
     /**
-     * metoda na pohyb hrace svetem
+     * metoda na pohyb hrace svetem, pomohl chat gpt
      */
     public String move(String smer) {
         int dirIndex;

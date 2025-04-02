@@ -1,4 +1,8 @@
 package world;
+
+/**
+ * Třída na commandy
+ */
 public abstract class Command {
     protected String prikaz;
     public void setPrikaz(String prikaz){

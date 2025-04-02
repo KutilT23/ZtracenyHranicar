@@ -8,6 +8,9 @@ import dalsi.Predmet;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Třída na využití a výpis batohu
+ */
 public class Batoh extends Command {
 
     private static ArrayList<Predmet>batoh = new ArrayList<>();

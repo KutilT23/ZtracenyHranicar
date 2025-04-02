@@ -1,5 +1,8 @@
 package dalsi;
 
+/**
+ * Třída pro nastavení parametrů hráče
+ */
 public class Hrac {
     private static int zivoty = 100;
     private static int sila = 5;

@@ -1,5 +1,8 @@
 package dalsi;
 
+/**
+ * Třída pro nastavení parametrů pro předmět
+ */
 public class Predmet {
     private String nazev;
     private int sila;

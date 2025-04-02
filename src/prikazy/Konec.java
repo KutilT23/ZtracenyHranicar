@@ -2,6 +2,9 @@ package prikazy;
 
 import world.Command;
 
+/**
+ * Třída pro ukončení hry
+ */
 public class Konec extends Command {
     /**
      * metoda pro vypsani konce hry

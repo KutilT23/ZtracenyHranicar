@@ -2,6 +2,9 @@ package world;
 
 import java.util.Arrays;
 
+/**
+ * Třída na lokaci a její indexy, inspirováno z moodle
+ */
 public class Location {
     private String name;
     private int ID;

@@ -6,6 +6,9 @@ import world.WorldMap;
 
 import java.util.Scanner;
 
+/**
+ * Třída na pohyb
+ */
 public class Pohyb extends Command {
 
     private WorldMap map = new WorldMap();

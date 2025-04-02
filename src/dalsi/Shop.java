@@ -5,6 +5,9 @@ import prikazy.Batoh;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Třída pro interakci s obchodem(nakup, prodej)
+ */
 public class Shop {
     private static ArrayList<Predmet>shop = new ArrayList<>();
 

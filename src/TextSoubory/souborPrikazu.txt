@@ -1,1 +1,14 @@
+prikazy
+interakce
 pohyb
+pohyb
+interakce
+interakce
+interakce
+interakce
+interakce
+interakce
+interakce
+nakup
+prodat
+konec

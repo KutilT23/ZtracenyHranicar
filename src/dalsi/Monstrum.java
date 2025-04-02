@@ -3,6 +3,9 @@ package dalsi;
 
 import java.util.ArrayList;
 
+/**
+ * Třída pro nastavení lootdropu monster
+ */
 public class Monstrum {
 
     private String jmeno;

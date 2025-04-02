@@ -4,6 +4,9 @@ import dalsi.Shop;
 import world.Command;
 import world.WorldMap;
 
+/**
+ * Třída na prodej předmětů
+ */
 public class Prodat extends Command {
     /**
      * metoda na spusteni metody na prodej

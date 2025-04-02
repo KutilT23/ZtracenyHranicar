@@ -3,6 +3,9 @@ package prikazy;
 
 import world.Command;
 
+/**
+ * Třída na výpis příkazů
+ */
 public class Prikazy extends Command {
     /**
      * metoda na vypsani vsech prikazu

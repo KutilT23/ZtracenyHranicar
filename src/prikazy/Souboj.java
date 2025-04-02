@@ -10,6 +10,9 @@ import world.Command;
 import dalsi.Predmet;
 import world.WorldMap;
 
+/**
+ * Třída na souboj
+ */
 public class Souboj extends Command {
     ArrayList<Predmet>vyhra = new ArrayList<>();
     private boolean jeMrtvy = false;

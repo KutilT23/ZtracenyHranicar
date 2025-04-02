@@ -4,6 +4,9 @@ import dalsi.Shop;
 import world.Command;
 import world.WorldMap;
 
+/**
+ * Třída na nákup předmětů
+ */
 public class Nakup extends Command {
     /**
      *  spusteni metod na pridani predmetu do shopu a jejich nasledný nakup
