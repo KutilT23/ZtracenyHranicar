@@ -10,6 +10,6 @@ class KonecTest {
     @Test
     void execute() {
         Konec konec = new Konec();
-        assertEquals("Hra končí...", konec.execute());
+        assertEquals("Hra končí\uD83C\uDFC1...", konec.execute());
     }
 }
