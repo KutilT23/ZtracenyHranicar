@@ -15,6 +15,7 @@ public class TextVypis extends Command {
     /**
      * metoda pro spusteni metody na vypis pribehu podle aktualni lokace
      */
+    //priste textove soubory do jine slozky v projektu a ne do package
     @Override
     public String execute() {
 

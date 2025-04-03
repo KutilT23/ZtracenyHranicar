@@ -24,8 +24,8 @@ public class Prodat extends Command {
         }else{
             return "nejsi ve vesnici";
         }
-
-        return "";
+        // kdyz uz tam pouzivam return tak at ho vyuziju
+        return "prodano";
     }
     /**
      * metoda na zjisteni zda program konci

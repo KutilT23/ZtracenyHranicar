@@ -71,7 +71,6 @@ public class Interakce extends Command {
 
                         }
 
-
                     }else if(splnenUkol1==true&&splnenUkol2==false){
                         System.out.println("Druhý úkol: Získej VlkodlačíKrev a VlkodlačíTesák ");
                         for (int i = 0; i < batoh.getBatoh().size(); i++) {
